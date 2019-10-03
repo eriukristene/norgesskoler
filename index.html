@@ -22,7 +22,7 @@
 	
   <body>
 <!--------------------------------------------------------place the map on the page----------------------------------->
-<div id="mapid"></div>
+<div id="mapdiv"></div>
 <!-------------------------------------------------------------JAVASCRIPT CODE---------------------------------------->	 
 <script> 
      
@@ -68,7 +68,7 @@ schoolThree.bindPopup ("Hello this is a school but it is the smallest of the sch
 schoolThree.addTo(smallSchoolsGroup); 
 
 // define the map and set its location via ([latitude, longitude], map zoom)
-var mymap = L.map('mapid', {layers:[bigSchoolsGroup,mediumSchoolsGroup,smallSchoolsGroup]}).setView([59.9139, 10.7522], 9); 
+var mymap = L.map('mapdiv', {layers:[bigSchoolsGroup,mediumSchoolsGroup,smallSchoolsGroup]}).setView([59.9139, 10.7522], 9); 
     
 //access the MapBox maps API, with generated API key/access token from Erin's MapBox account
     L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww', {
@@ -88,6 +88,13 @@ var overlayMaps = {
 //add the groups to the map
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
 
+var polygon = L.polygon([
+ [59.9134, 10.8418],
+ [9.7441, 10.2045],
+ [59.9560, 11.0504]
+ ]).addTo(mymap);
+
+polygon.setStyle({ fillColor: 'red' });
 
  /*example of customizing the pop up text with links and other HTML tags   
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});
@@ -95,7 +102,6 @@ L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
 */	  
 
 /* TO DO
----figure out why the schools are not automatically checked and showing upon loading the page
 ---add an outline shape of the Viken fylkeskommune
 ---look for another map???
 */

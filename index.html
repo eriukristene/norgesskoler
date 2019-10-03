@@ -67,9 +67,9 @@ schoolTwo.bindPopup ("Hello this is a school as well but it is a little smaller.
 	    
 var schoolThree = L.marker([59.9560, 11.0504], {icon: smallIcon});
 //schoolThree.addTo(mymap);
-schoolThree.bindPopup ("Hello this is a school but it is the smallest of the schools.");
+schoolThree.bindPopup ("Hello this is a school but it is the smallest of the schools. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 
-	   
+//add the schools to lists and only show them when they are clicked from the display panel 
 var bigSchoolsGroup = L.layerGroup([schoolOne]);
 var mediumSchoolsGroup = L.layerGroup([schoolTwo]);
 var smallSchoolsGroup = L.layerGroup([schoolThree]);
@@ -80,40 +80,15 @@ var overlays = {
 "Small Schools": smallSchoolsGroup
 }
 	   
-var layerControl = L.control.layers(null, overlays);
-	    
+var layerControl = L.control.layers(null, overlays);   
 mymap.addControl(layerControl);
 	 
 	    
 	    
 	    
- /*place the icons on the map     
+ /*example of customizing the pop up text with links and other HTML tags   
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});
-//bind and include text/link/etc. for popup box when clicked
       schoolOne.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
-     
-    var MosqueofMuhammadAlimarker = L.marker([30.02861, 31.259722], {icon: SmallIcon});
-      MosqueofMuhammadAlimarker.bindPopup("<b> Mosque of Muhammad Ali! </b><br>Constructed 1830-1857, Muhammad Ali Pasha commissioned this mosque within the Citadel of Cairo. It is the largest Ottoman Mosque to have been built in the first half of the 19th century and has two minarets, and is therefore known as the most visible mosque in Cairo. It was modelled on the Yeni Mosque in Istanbul, with features reserved for mosques built on the authority of the Ottoman Sultan – making it a symbolic declaration of Egyptian independence from Ottoman rule. It also serves as Ali's final resting place. <br> <br> <a href='https://en.wikipedia.org/wiki/Mosque_of_Muhammad_Ali' target='_newtab'> Wikipedia </a>");
-      
-   
-	    
-	   var Big = L.layerGroup([schoolOne]);
-	   
-	   var Medium = L.layerGroup([BenEzraSynagoguemarker]);
-	   
-	   var Small = L.layerGroup([ChurchOfStGeorgemarker, HangingChurchmarker, SaintMercuriusChurchmarker, SaintMarksCathedralmarker]);
-	   
-	    
-	       
-	    var overlays = {
-		 "Pharaonic": Big,
-		    "Jewish": Medium,
-		      "Christian": Small
-	    }
-	   
-	    var layerControl = L.control.layers(null, overlays);
-	    
-	    mymap.addControl(layerControl);
 */	  
 	    
 	    

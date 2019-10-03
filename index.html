@@ -34,14 +34,14 @@
       
      var ChristianIcon = L.icon ({
        iconUrl: 'big.png',                
-       iconSize: [32,37],
+       iconSize: [100,100],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });
       
       var ChapelIcon = L.icon ({
        iconUrl: 'medium.png',                
-       iconSize: [32,37],
+       iconSize: [50,50],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });
@@ -53,27 +53,14 @@
        popupAnchor: [-3, -76]
     });
 
-      var PrayerIcon = L.icon ({
-       iconUrl: 'prayer.png',                
-       iconSize: [32,37],
-       iconAnchor: [30.072222, 31.275556],
-       popupAnchor: [-3, -76]
-    });
-	
-      var SynagogueIcon = L.icon ({
-       iconUrl: 'synagogue.png',                
-       iconSize: [32,37],
-       iconAnchor: [30.072222, 31.275556],
-       popupAnchor: [-3, -76]
-    });
-     
-     var Gizamarker = L.marker([29.9792, 31.1342], {icon: PrayerIcon});
+        
+     var Gizamarker = L.marker([29.9792, 31.1342], {icon: ChristianIcon});
      Gizamarker.bindPopup("<b> The Great Pyramid of Giza! </b><br> The Great Pyramid was completed around 2560 BCE, as a tomb for Pharaoh Khufu. It was the tallest human-made structure in the world until 1311 CE, and stood at the heart of the Giza pyramid complex (which includes the Great Sphinx). Little is known about Khufu's reign, but his resting place is an object of fascination today. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
       
-         var Sphinxmarker = L.marker([29.9753, 31.1376], {icon: PrayerIcon});
+         var Sphinxmarker = L.marker([29.9753, 31.1376], {icon: ChristianIcon});
       Sphinxmarker.bindPopup("<b> The Great Sphinx of Giza! </b><br> Sculpted with the body of a lion and the head of a human, the details and purpose of its construction are unknown. The human face of the sculpture is believed to be modeled on that of Pharoah Khafra, during whose reign the sculpture was likely made (ca. 2558-2532 BCE), and lions were commonly associated with kings.  <br><br> <a href='https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza' target='_newtab'> Wikipedia </a>");
        
-      var Saqqaramarker = L.marker([29.87111, 31.21639], {icon: PrayerIcon});
+      var Saqqaramarker = L.marker([29.87111, 31.21639], {icon: ChristianIcon});
       Saqqaramarker.bindPopup("<b> Saqqara! </b><br> The First Dynasty of Egypt (ca. 3200 BCE) initiated this vast burial complex near Memphis, which remained the capital until around 2000 BCE. Even as the capital shifted, Saqqara remained a burial ground for nobles - and, for a time, an administrative and military centre. Its array of monuments were built across thousands of years, memorializing Pharoahs, state officials, Greek philosophers, and others. <br><br> <a href='https://en.wikipedia.org/wiki/Saqqara' target='_newtab'> Wikipedia </a>");
 	    
       var SaintMarksCathedralmarker = L.marker([30.072222, 31.275556], {icon: ChristianIcon});
@@ -109,7 +96,7 @@
       var AlHusseinmarker = L.marker([30.047778, 31.263056], {icon: MosqueIcon});
       AlHusseinmarker.bindPopup("<b> Al-Hussein Mosque! </b><br> Built in 1154, Al Hussein mosque is situated by the popular Khan Al-Khalili market and is considered one of the holiest Islamic sites as it is believed that it is the burial place of the head of Hussein, the grandson of prophet Mohammad. The mosque also houses the oldest complete manuscript of the Holy Quran. It was built on the graveyard of the Fatimid Caliphs, although this fact was not known until 20th-century restoration of the site. The mosque has historically been a locus of conflict between Shia and Salafist Muslims on certain days of the Islamic calendar, owing to differing interpretations of the significance of the site and certain religious services. <br><br> <a href='https://en.wikipedia.org/wiki/Al-Hussein_Mosque' target='_newtab'> Wikipedia </a>");
       
-       var BenEzraSynagoguemarker = L.marker([30.005794, 31.231022], {icon: SynagogueIcon});
+       var BenEzraSynagoguemarker = L.marker([30.005794, 31.231022], {icon: ChapelIcon});
       BenEzraSynagoguemarker.bindPopup("<b> Ben Ezra Synagogue! </b><br> Ben Ezra Synagogue has occupied three distinct buildings. It moved to its current site - a former church - in the 1890s. It occupied its original site at least as early as 882 CE, and may be pre-Islamic - but little is known about its history prior to the 1012 CE when the Fatimid Caliph ordered all Christian and Jewish places of worship destroyed. Today, the Jewish community in Egypt is considerably diminished, having numbered about 80,000 people in the early 20th century yet today includes fewer than a dozen people of Egyptian ancestry residing in Cairo. Accordingly, the Ben Ezra Synagogue is now a tourist attraction and museum, rather than a functioning congregation. <br> <br> <a href='https://en.wikipedia.org/wiki/Ben_Ezra_Synagogue' target='_newtab'> Wikipedia </a>");//.openPopup();
 	    
 	   var Pharaonic = L.layerGroup([Gizamarker, Sphinxmarker, Saqqaramarker]);

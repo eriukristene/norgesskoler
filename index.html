@@ -12,19 +12,19 @@
     <link rel="stylesheet" href="leaflet.css" />
 	<script src="leaflet.js">  </script>
 	  <header>
-		<h3>Test Header Title FIVE</h3>
+		<h3>Test Header Title THREE</h3>
 		<p>Information we can put here.</p>
 	</header>
   </head>
 	
 	
   <body>
-<!--place the map on the page-->
-    <div id="mapid"></div>
-	 
-    <script> 
+<!--------------------------------------------------------place the map on the page----------------------------------->
+<div id="mapid"></div>
+<!-------------------------------------------------------------JAVASCRIPT CODE---------------------------------------->	 
+<script> 
      
-//define the icons
+//define the icons we will use to place on the map to indicate locations
       var bigIcon = L.icon ({
        iconUrl: 'big.png',                
        iconSize: [100,100],
@@ -46,13 +46,13 @@
        popupAnchor: [-3, -76]
     });
 
-//add the schools to overlay layers and only show them when they are clicked from the display panel
-// see tutorial at 
+//define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
+// see tutorial at https://leafletjs.com/examples/layers-control/
 var bigSchoolsGroup = L.layerGroup();
 var mediumSchoolsGroup = L.layerGroup();
 var smallSchoolsGroup = L.layerGroup();
 	    
-//add the school icons to the map
+//define each school with its location, information text, and add to layer group
 var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
 schoolOne.bindPopup ("Hello this is a school.");
 schoolOne.addTo(bigSchoolsGroup);
@@ -66,7 +66,7 @@ schoolThree.bindPopup ("Hello this is a school but it is the smallest of the sch
 schoolThree.addTo(smallSchoolsGroup); 
 
 // define the map and set its location via ([latitude, longitude], map zoom)
-var mymap = L.map('mapid').setView([59.9139, 10.7522], 9); 
+var mymap = L.map('mapid', {layers:[bigSchoolsGroup,mediumSchoolsGroup,smallSchoolsGroup]}).setView([59.9139, 10.7522], 9); 
     
 //access the MapBox maps API, with generated API key/access token from Erin's MapBox account
     L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww', {
@@ -75,23 +75,30 @@ var mymap = L.map('mapid').setView([59.9139, 10.7522], 9);
     id: 'your.mapbox.project.id',
     accessToken: 'pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww'
 }).addTo(mymap);
-	    
+	 
+//create the legend of each group of schools as overlay list with checkboxes
 var overlayMaps = {
 "Big Schools": bigSchoolsGroup,
 "Medium Schools": mediumSchoolsGroup,
 "Small Schools": smallSchoolsGroup
 }
-	   
+
+//add the groups to the map
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
 
-	    
-	    
-	    
+
  /*example of customizing the pop up text with links and other HTML tags   
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});
       schoolOne.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 */	  
-	    
+
+/* TO DO
+---figure out why the schools are not automatically checked and showing upon loading the page
+---add an outline shape of the Viken fylkeskommune
+---look for another map???
+*/
+	
+/*----------------------------------------------------------END JAVASCRIPT CODE----------------------------------------*/
 	    
     </script>
     </body>

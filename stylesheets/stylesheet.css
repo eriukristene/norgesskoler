@@ -1,12 +1,12 @@
 * {
   box-sizing: border-box;
-  background-clip: content-box; /* <---- */
-  box-shadow: inset 0 0 0 10px lightGreen;
 }
 
 header {
   background-color: #E5D9D0;
   padding: 25px 25px 25px 25px;
+  background-clip: content-box; /* <---- */
+  box-shadow: inset 0 0 0 10px lightGreen;
 }
 
 body {
@@ -17,6 +17,8 @@ body {
   line-height: 1.5;
   color: #606c71;
   padding: 25px 25px 25px 25px;
+  background-clip: content-box; /* <---- */
+  box-shadow: inset 0 0 0 10px lightGreen;
 }
 
 a {

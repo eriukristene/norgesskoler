@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="leaflet.css" />
 	<script src="leaflet.js">  </script>
 	  <header>
-		<h3>Test Header Title FOUR</h3>
+		<h3>Test Header Title FIVE</h3>
 		<p>Information we can put here.</p>
 	</header>
   </head>
@@ -21,20 +21,9 @@
   <body>
 <!--place the map on the page-->
     <div id="mapid"></div>
-	  
-<!--define the map and set its location via ([latitude, longitude], map zoom)-->
+	 
     <script> 
-
-var mymap = L.map('mapid').setView([59.9139, 10.7522], 9); 
-    
-//access the MapBox maps API, with generated API key/access token from Erin's MapBox account
-    L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    maxZoom: 18.5,
-    id: 'your.mapbox.project.id',
-    accessToken: 'pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww'
-}).addTo(mymap);
-      
+     
 //define the icons
       var bigIcon = L.icon ({
        iconUrl: 'big.png',                
@@ -76,6 +65,17 @@ var schoolThree = L.marker([59.9560, 11.0504], {icon: smallIcon});
 schoolThree.bindPopup ("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 schoolThree.addTo(smallSchoolsGroup); 
 
+// define the map and set its location via ([latitude, longitude], map zoom)
+var mymap = L.map('mapid').setView([59.9139, 10.7522], 9); 
+    
+//access the MapBox maps API, with generated API key/access token from Erin's MapBox account
+    L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18.5,
+    id: 'your.mapbox.project.id',
+    accessToken: 'pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww'
+}).addTo(mymap);
+	    
 var overlayMaps = {
 "Big Schools": bigSchoolsGroup,
 "Medium Schools": mediumSchoolsGroup,

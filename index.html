@@ -35,69 +35,40 @@
 }).addTo(mymap);
       
 //define the icons
-      var BigIcon = L.icon ({
+      var bigIcon = L.icon ({
        iconUrl: 'big.png',                
        iconSize: [100,100],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });
       
-      var MediumIcon = L.icon ({
+      var mediumIcon = L.icon ({
        iconUrl: 'medium.png',                
        iconSize: [50,50],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });
 
-      var SmallIcon = L.icon ({
+      var smallIcon = L.icon ({
        iconUrl: 'small.png',                
        iconSize: [32,37],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });
 
- //place the icons on the map     
+L.marker([59.9134, 10.8418], {icon: bigIcon}).addTo(mymap);
+L.marker([59.7441, 10.2045], {icon: mediumIcon}).addTo(mymap);
+L.marker([59.9560, 11.0504], {icon: smallIcon}).addTo(mymap);
+	    
+ /*place the icons on the map     
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});
 //bind and include text/link/etc. for popup box when clicked
       schoolOne.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
-      
-	    
-	    
-/* original test code from former project	    
-      var Sphinxmarker = L.marker([29.9753, 31.1376], {icon: BigIcon});
-      Sphinxmarker.bindPopup("<b> School 2 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br><br> <a href='https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza' target='_newtab'> Wikipedia </a>");
-       
-      var Saqqaramarker = L.marker([29.87111, 31.21639], {icon: BigIcon});
-      Saqqaramarker.bindPopup("<b> School 3 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br><br> <a href='https://en.wikipedia.org/wiki/Saqqara' target='_newtab'> Wikipedia </a>");
-	    
-      var SaintMarksCathedralmarker = L.marker([30.072222, 31.275556], {icon: BigIcon});
-      SaintMarksCathedralmarker.bindPopup("<b> School 4 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> <a href='https://en.wikipedia.org/wiki/Saint_Mark%27s_Coptic_Orthodox_Cathedral' target='_newtab'> Wikipedia </a>");
-      
-      var SaintMercuriusChurchmarker = L.marker([30.016111, 31.385278], {icon: MediumIcon});
-      SaintMercuriusChurchmarker.bindPopup("<b> Saint Mercurius Church! </b><br> Although the original Church of Saint Mercurius was destroyed to make room for a sugar warehouse, it was rebuilt in the 10th century CE. A mob burned down the reconstructed church in 1168; by 1176 it was rebuilt again. Yet, its original foundation remains intact (unlike those of basically all Coptic churches in Cairo). It was the seat of the Coptic Orthodox Pope, ca. 1300-1500 CE. It is the burial place of many Coptic Church leaders. <br> <br> <a href='https://en.wikipedia.org/wiki/Saint_Mercurius_Church_in_Coptic_Cairo' target='_newtab'> Wikipedia </a>");
-      
-     var HangingChurchmarker = L.marker([30.005388, 31.230081], {icon: MediumIcon});
-      HangingChurchmarker.bindPopup("<b> The Hanging Church! </b><br> There has been a church on this site since the 3rd century CE. When the seat of the Coptic Pope first left the cathedral in Alexandria, it was moved to the Hanging Church in 1047 CE. Its name is derived from the fact that it sits atop a gatehouse of Babylon Fortress, remnants of the Roman fortifications in Old Cairo which have served as a foundation for subsequent building. <br> <br> <a href='https://en.wikipedia.org/wiki/The_Hanging_Church' target='_newtab'> Wikipedia </a>");
-      
-       var ChurchOfStGeorgemarker = L.marker([30.006387, 31.229952], {icon: MediumIcon});
-      ChurchOfStGeorgemarker.bindPopup("<b> The Church of St. George! </b><br> The Church of St. George was built in the 10th century CE (possibly earlier) on the ruins of a Roman tower, giving it its distinct round shape. It is the main Greek Orthodox Church in Egypt, and is the seat of the Greek Patriarchate of Alexandria. Yet, it is also regularly visited by Coptic Orthodox Christians and some Muslims. <br> <br> <a href='https://en.wikipedia.org/wiki/Church_of_St._George_(Cairo)' target='_newtab'> Wikipedia </a>");
-      
-       var Azharmarker = L.marker([30.0457, 31.2627], {icon: MediumIcon});
-      Azharmarker.bindPopup("<b>Al-Azhar Mosque! </b><br> The Fatimid Caliphate commissioned the mosque in 970 CE to serve its new capital city. Since the hiring of 35 scholars in 989 CE, it is the second oldest continuously run university in the world, and in 1961 was nationalized and designated as an independent university. As a Shiite institution its status has changed considerably during its history, which spans over a millenium, according to the changing leadership of Egypt. <br><br> <a href='https://en.wikipedia.org/wiki/Al-Azhar_Mosque' target='_newtab'> Wikipedia </a>");
-      
+     
     var MosqueofMuhammadAlimarker = L.marker([30.02861, 31.259722], {icon: SmallIcon});
       MosqueofMuhammadAlimarker.bindPopup("<b> Mosque of Muhammad Ali! </b><br>Constructed 1830-1857, Muhammad Ali Pasha commissioned this mosque within the Citadel of Cairo. It is the largest Ottoman Mosque to have been built in the first half of the 19th century and has two minarets, and is therefore known as the most visible mosque in Cairo. It was modelled on the Yeni Mosque in Istanbul, with features reserved for mosques built on the authority of the Ottoman Sultan – making it a symbolic declaration of Egyptian independence from Ottoman rule. It also serves as Ali's final resting place. <br> <br> <a href='https://en.wikipedia.org/wiki/Mosque_of_Muhammad_Ali' target='_newtab'> Wikipedia </a>");
       
-      var MosqueofAmrmarker = L.marker([30.0101, 31.2331], {icon: SmallIcon});
-      MosqueofAmrmarker.bindPopup("<b> Mosque of Amr ibn al-As! </b><br> The Mosque of Amr Ibn Al As is the first mosque built in Africa, and has also been referred to as the Crown of the Mosques and the Antique Mosque. Following the first Muslim conquest of Egypt in 641 CE, the new rulers established their capital city: Fustat. They completed this mosque at its centre in 642 CE on the site of the tent of the commander of the conquering army, General Amr ibn al-As, and made it large enough to serve as the main site of congregation for his army. Fustat, meaning ‘city of tents,’ was eventually absorbed into Cairo (today, the area is part of Old Cairo). The mosque saw considerable development in the years to come, including a doubling of its size in 673 CE; it was built to its present-day size in 827 CE. However, owing to its dilapidation the mosque was destroyed and rebuilt in the 18th century CE – and was rebuilt again in 1875. It was not only a place of prayer, but doubled as a university with an impressive religious intellectual history. <br><br> <a href='https://en.wikipedia.org/wiki/Mosque_of_Amr_ibn_al-As' target='_newtab'> Wikipedia </a>");
-      
-      var MosqueofIbnTulunmarker = L.marker([30.028889, 31.249444], {icon: SmallIcon});
-      MosqueofIbnTulunmarker.bindPopup("<b> Mosque of Ibn Tulun! </b><br> Built 876-879 CE and consecrated in 884 CE, the Mosque of Ibn Tulun is the oldest mosque in Cairo surviving in its original form (although the date of the construction of its minarets is unknown). It was intended as the focal point of the Turkic capital city in Egypt at this time, al-Qata’i, built by a ruler asserting de facto independence from Istanbul on a site associated with a range of local legends – including that it was the landing point for Noah’s Ark. It replaced the Mosque of Amr ibn al-As, which could not fit all of Ibn Tulun’s soldiers, as the main congregational mosque. The mosque is the only structure to have survived the razing of al-Qata’i in the 10th century CE when power shifted to the Abbasids. It continues to reside on the spot of many biblical legends, such as the possible landing site of Noah's Ark and near where Abraham almost sacrificed Isaac. The mosque was restored in 1296 by Mamluk Sultan Lajin. <br><br> <a href='https://en.wikipedia.org/wiki/Mosque_of_Ibn_Tulun' target='_newtab'> Wikipedia </a>");
-      */
-       var MosqueMadrassaofSultanHassanmarker = L.marker([59.9134, 10.8418], {icon: SmallIcon});
-      MosqueMadrassaofSultanHassanmarker.bindPopup("<b> Mosque-Madrassa of Sultan Hassan! </b><br>The Mamluk rulers of Egypt built the Mosque-Madrassa in 1356-1359 CE, designing it to include all four Sunni schools of thought. It is one of the largest mosques in the world, and was the most expensive mosque built in medieval Cairo. It is said that a considerable amount of its funding was expropriated from the estates of those who died when the Black Death struck Cairo, 1348. Built close to the Citadel, the Sultan was able to look on its impressive structure – but this proximity also allowed the mosque to serve as the base from which rebels were able to attack the Citadel.<br> <br> <a href='https://en.wikipedia.org/wiki/Mosque-Madrassa_of_Sultan_Hassan' target='_newtab'> Wikipedia </a>");
-      
-      
+   
 	    
 	   var Big = L.layerGroup([schoolOne]);
 	   
@@ -116,7 +87,7 @@
 	    var layerControl = L.control.layers(null, overlays);
 	    
 	    mymap.addControl(layerControl);
-	  
+*/	  
 	    
 	    
     </script>

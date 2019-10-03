@@ -354,7 +354,7 @@
 .leaflet-control-layers-expanded {
 	padding: 6px 10px 6px 6px;
 	color: #333;
-	background: #fff;
+	background: #cccccc;
 	}
 .leaflet-control-layers-scrollbar {
 	overflow-y: scroll;

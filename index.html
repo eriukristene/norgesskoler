@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="leaflet.css" />
 	<script src="leaflet.js">  </script>
 	  <header>
-		<h3>Test Header Title SEVEN</h3>
+		<h3>Test Header Title ONE</h3>
 		<p>Information we can put here.</p>
 	</header>
   </head>
@@ -56,23 +56,24 @@
        popupAnchor: [-3, -76]
     });
 
+//add the schools to overlay layers and only show them when they are clicked from the display panel
+// see tutorial at 
+var bigSchoolsGroup = L.layerGroup();
+var mediumSchoolsGroup = L.layerGroup();
+var smallSchoolsGroup = L.layerGroup();
+	    
 //add the school icons to the map
 var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
-//schoolOne.addTo(mymap);
 schoolOne.bindPopup ("Hello this is a school.");
+schoolOne.addTo(bigSchoolsGroup);
 
 var schoolTwo = L.marker([59.7441, 10.2045], {icon: mediumIcon});
-//schoolTwo.addTo(mymap);
 schoolTwo.bindPopup ("Hello this is a school as well but it is a little smaller.");
+schoolTwo.addTo(mediumSchoolsGroup); 
 	    
 var schoolThree = L.marker([59.9560, 11.0504], {icon: smallIcon});
-//schoolThree.addTo(mymap);
 schoolThree.bindPopup ("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
-
-//add the schools to lists and only show them when they are clicked from the display panel 
-var bigSchoolsGroup = L.layerGroup([schoolOne]);
-var mediumSchoolsGroup = L.layerGroup([schoolTwo]);
-var smallSchoolsGroup = L.layerGroup([schoolThree]);
+schoolThree.addTo(smallSchoolsGroup); 
 
 var overlayMaps = {
 "Big Schools": bigSchoolsGroup,
@@ -80,7 +81,7 @@ var overlayMaps = {
 "Small Schools": smallSchoolsGroup
 }
 	   
-L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
+L.control.layers(null, overlayMaps).addTo(mymap);   
 
 	    
 	    

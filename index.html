@@ -59,8 +59,31 @@
 var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
 schoolOne.addTo(mymap);
 schoolOne.bindPopup ("Hello this is a school.");
-L.marker([59.7441, 10.2045], {icon: mediumIcon}).addTo(mymap);
-L.marker([59.9560, 11.0504], {icon: smallIcon}).addTo(mymap);
+
+var schoolTwo = L.marker([59.7441, 10.2045], {icon: mediumIcon});
+schoolTwo.addTo(mymap);
+schoolTwo.bindPopup ("Hello this is a school as well but it is a little smaller.");
+	    
+var schoolThree = L.marker([59.9560, 11.0504], {icon: smallIcon});
+schoolThree.addTo(mymap);
+schoolThree.bindPopup ("Hello this is a school but it is the smallest of the schools.");
+/*	    
+var bigSchoolsGroup = L.layerGroup([schoolOne]);
+var mediumSchoolsGroup = L.layerGroup([schoolTwo]);
+var smallSchoolsGroup = L.layerGroup([schoolThree]);
+
+var overlays = {
+"Pharaonic": Big,
+"Jewish": Medium,
+"Christian": Small
+}
+	   
+var layerControl = L.control.layers(null, overlays);
+	    
+mymap.addControl(layerControl);
+	    */
+	    
+	    
 	    
  /*place the icons on the map     
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});

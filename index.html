@@ -56,7 +56,9 @@
        popupAnchor: [-3, -76]
     });
 
-L.marker([59.9134, 10.8418], {icon: bigIcon}).addTo(mymap);
+var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
+schoolOne.addTo(mymap);
+schoolOne.bindPopup ("Hello this is a school.");
 L.marker([59.7441, 10.2045], {icon: mediumIcon}).addTo(mymap);
 L.marker([59.9560, 11.0504], {icon: smallIcon}).addTo(mymap);
 	    

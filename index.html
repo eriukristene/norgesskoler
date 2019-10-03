@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Exploring Religious Diversity in Cairo, Egypt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="leaflet.css" />
+<script src="leaflet.js">  </script>
+	  <header>
+		<h3> Exploring Religious Diversity in Cairo, Egypt</h3>
+		<p>Cairo is among the world's largest and oldest cities, and throughout its history has been home to people with a diverse range of beliefs. This map marks some of the key locations in the religious history of Cairo, including Pharaonic, Jewish, Christian, and Muslim places of worship and memory. Use the control in the top-right corner of the map to toggle these markers, then click on a marker to learn more.</p>
+	</header>
+  </head>
+	
+	
+  <body>
+  
+    <div id="mapid"> 
+      
+    </div> 
+    <script> var mymap = L.map('mapid').setView([29.96, 31.24], 11.3); 
+    
+    L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam9obmRveWxlcmFzbyIsImEiOiJjaXU5dHdmdjEwMDRnMm90bmhyZzQwNDY1In0.RUo-y6NWYDyaq8EN0-BsYg', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18.5,
+    id: 'your.mapbox.project.id',
+    accessToken: 'pk.eyJ1Ijoiam9obmRveWxlcmFzbyIsImEiOiJjaXU5dHdmdjEwMDRnMm90bmhyZzQwNDY1In0.RUo-y6NWYDyaq8EN0-BsYg'
+}).addTo(mymap);
+      
+     var ChristianIcon = L.icon ({
+       iconUrl: 'cross.png',                
+       iconSize: [32,37],
+       iconAnchor: [30.072222, 31.275556],
+       popupAnchor: [-3, -76]
+    });
+      
+      var ChapelIcon = L.icon ({
+       iconUrl: 'chapel.png',                
+       iconSize: [32,37],
+       iconAnchor: [30.072222, 31.275556],
+       popupAnchor: [-3, -76]
+    });
+
+      var MosqueIcon = L.icon ({
+       iconUrl: 'mosque.png',                
+       iconSize: [32,37],
+       iconAnchor: [30.072222, 31.275556],
+       popupAnchor: [-3, -76]
+    });
+
+      var PrayerIcon = L.icon ({
+       iconUrl: 'prayer.png',                
+       iconSize: [32,37],
+       iconAnchor: [30.072222, 31.275556],
+       popupAnchor: [-3, -76]
+    });
+	
+      var SynagogueIcon = L.icon ({
+       iconUrl: 'synagogue.png',                
+       iconSize: [32,37],
+       iconAnchor: [30.072222, 31.275556],
+       popupAnchor: [-3, -76]
+    });
+     
+     var Gizamarker = L.marker([29.9792, 31.1342], {icon: PrayerIcon});
+     Gizamarker.bindPopup("<b> The Great Pyramid of Giza! </b><br> The Great Pyramid was completed around 2560 BCE, as a tomb for Pharaoh Khufu. It was the tallest human-made structure in the world until 1311 CE, and stood at the heart of the Giza pyramid complex (which includes the Great Sphinx). Little is known about Khufu's reign, but his resting place is an object of fascination today. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
+      
+         var Sphinxmarker = L.marker([29.9753, 31.1376], {icon: PrayerIcon});
+      Sphinxmarker.bindPopup("<b> The Great Sphinx of Giza! </b><br> Sculpted with the body of a lion and the head of a human, the details and purpose of its construction are unknown. The human face of the sculpture is believed to be modeled on that of Pharoah Khafra, during whose reign the sculpture was likely made (ca. 2558-2532 BCE), and lions were commonly associated with kings.  <br><br> <a href='https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza' target='_newtab'> Wikipedia </a>");
+       
+      var Saqqaramarker = L.marker([29.87111, 31.21639], {icon: PrayerIcon});
+      Saqqaramarker.bindPopup("<b> Saqqara! </b><br> The First Dynasty of Egypt (ca. 3200 BCE) initiated this vast burial complex near Memphis, which remained the capital until around 2000 BCE. Even as the capital shifted, Saqqara remained a burial ground for nobles - and, for a time, an administrative and military centre. Its array of monuments were built across thousands of years, memorializing Pharoahs, state officials, Greek philosophers, and others. <br><br> <a href='https://en.wikipedia.org/wiki/Saqqara' target='_newtab'> Wikipedia </a>");
+	    
+      var SaintMarksCathedralmarker = L.marker([30.072222, 31.275556], {icon: ChristianIcon});
+      SaintMarksCathedralmarker.bindPopup("<b> Saint Mark's Coptic Orthodox Cathedral! </b><br> Coptic Orthodox Christians have used the ground on which the cathedral stands for over a millenium. At different points in time it was variously the site of a cemetary and small churches. The Coptic Church built the cathedral in the mid-twentieth century, and in 1968 consecrated it as the seat of the Coptic Pope. Saint Mark was the founder of the Coptic Church and the namesake of several Coptic Cathedrals, including that which was the original seat of the Coptic Pope in Alexandria. Prior to the completion of the cathedral, the Catholic Pope returned some of Saint Mark's relics from Venice to Egypt; these now reside in the cathedral.<br><br> <a href='https://en.wikipedia.org/wiki/Saint_Mark%27s_Coptic_Orthodox_Cathedral' target='_newtab'> Wikipedia </a>");
+      
+      var SaintMercuriusChurchmarker = L.marker([30.016111, 31.385278], {icon: ChristianIcon});
+      SaintMercuriusChurchmarker.bindPopup("<b> Saint Mercurius Church! </b><br> Although the original Church of Saint Mercurius was destroyed to make room for a sugar warehouse, it was rebuilt in the 10th century CE. A mob burned down the reconstructed church in 1168; by 1176 it was rebuilt again. Yet, its original foundation remains intact (unlike those of basically all Coptic churches in Cairo). It was the seat of the Coptic Orthodox Pope, ca. 1300-1500 CE. It is the burial place of many Coptic Church leaders. <br> <br> <a href='https://en.wikipedia.org/wiki/Saint_Mercurius_Church_in_Coptic_Cairo' target='_newtab'> Wikipedia </a>");
+      
+     var HangingChurchmarker = L.marker([30.005388, 31.230081], {icon: ChristianIcon});
+      HangingChurchmarker.bindPopup("<b> The Hanging Church! </b><br> There has been a church on this site since the 3rd century CE. When the seat of the Coptic Pope first left the cathedral in Alexandria, it was moved to the Hanging Church in 1047 CE. Its name is derived from the fact that it sits atop a gatehouse of Babylon Fortress, remnants of the Roman fortifications in Old Cairo which have served as a foundation for subsequent building. <br> <br> <a href='https://en.wikipedia.org/wiki/The_Hanging_Church' target='_newtab'> Wikipedia </a>");
+      
+       var ChurchOfStGeorgemarker = L.marker([30.006387, 31.229952], {icon: ChapelIcon});
+      ChurchOfStGeorgemarker.bindPopup("<b> The Church of St. George! </b><br> The Church of St. George was built in the 10th century CE (possibly earlier) on the ruins of a Roman tower, giving it its distinct round shape. It is the main Greek Orthodox Church in Egypt, and is the seat of the Greek Patriarchate of Alexandria. Yet, it is also regularly visited by Coptic Orthodox Christians and some Muslims. <br> <br> <a href='https://en.wikipedia.org/wiki/Church_of_St._George_(Cairo)' target='_newtab'> Wikipedia </a>");
+      
+       var Azharmarker = L.marker([30.0457, 31.2627], {icon: MosqueIcon});
+      Azharmarker.bindPopup("<b>Al-Azhar Mosque! </b><br> The Fatimid Caliphate commissioned the mosque in 970 CE to serve its new capital city. Since the hiring of 35 scholars in 989 CE, it is the second oldest continuously run university in the world, and in 1961 was nationalized and designated as an independent university. As a Shiite institution its status has changed considerably during its history, which spans over a millenium, according to the changing leadership of Egypt. <br><br> <a href='https://en.wikipedia.org/wiki/Al-Azhar_Mosque' target='_newtab'> Wikipedia </a>");
+      
+    var MosqueofMuhammadAlimarker = L.marker([30.02861, 31.259722], {icon: MosqueIcon});
+      MosqueofMuhammadAlimarker.bindPopup("<b> Mosque of Muhammad Ali! </b><br>Constructed 1830-1857, Muhammad Ali Pasha commissioned this mosque within the Citadel of Cairo. It is the largest Ottoman Mosque to have been built in the first half of the 19th century and has two minarets, and is therefore known as the most visible mosque in Cairo. It was modelled on the Yeni Mosque in Istanbul, with features reserved for mosques built on the authority of the Ottoman Sultan – making it a symbolic declaration of Egyptian independence from Ottoman rule. It also serves as Ali's final resting place. <br> <br> <a href='https://en.wikipedia.org/wiki/Mosque_of_Muhammad_Ali' target='_newtab'> Wikipedia </a>");
+      
+      var MosqueofAmrmarker = L.marker([30.0101, 31.2331], {icon: MosqueIcon});
+      MosqueofAmrmarker.bindPopup("<b> Mosque of Amr ibn al-As! </b><br> The Mosque of Amr Ibn Al As is the first mosque built in Africa, and has also been referred to as the Crown of the Mosques and the Antique Mosque. Following the first Muslim conquest of Egypt in 641 CE, the new rulers established their capital city: Fustat. They completed this mosque at its centre in 642 CE on the site of the tent of the commander of the conquering army, General Amr ibn al-As, and made it large enough to serve as the main site of congregation for his army. Fustat, meaning ‘city of tents,’ was eventually absorbed into Cairo (today, the area is part of Old Cairo). The mosque saw considerable development in the years to come, including a doubling of its size in 673 CE; it was built to its present-day size in 827 CE. However, owing to its dilapidation the mosque was destroyed and rebuilt in the 18th century CE – and was rebuilt again in 1875. It was not only a place of prayer, but doubled as a university with an impressive religious intellectual history. <br><br> <a href='https://en.wikipedia.org/wiki/Mosque_of_Amr_ibn_al-As' target='_newtab'> Wikipedia </a>");
+      
+      var MosqueofIbnTulunmarker = L.marker([30.028889, 31.249444], {icon: MosqueIcon});
+      MosqueofIbnTulunmarker.bindPopup("<b> Mosque of Ibn Tulun! </b><br> Built 876-879 CE and consecrated in 884 CE, the Mosque of Ibn Tulun is the oldest mosque in Cairo surviving in its original form (although the date of the construction of its minarets is unknown). It was intended as the focal point of the Turkic capital city in Egypt at this time, al-Qata’i, built by a ruler asserting de facto independence from Istanbul on a site associated with a range of local legends – including that it was the landing point for Noah’s Ark. It replaced the Mosque of Amr ibn al-As, which could not fit all of Ibn Tulun’s soldiers, as the main congregational mosque. The mosque is the only structure to have survived the razing of al-Qata’i in the 10th century CE when power shifted to the Abbasids. It continues to reside on the spot of many biblical legends, such as the possible landing site of Noah's Ark and near where Abraham almost sacrificed Isaac. The mosque was restored in 1296 by Mamluk Sultan Lajin. <br><br> <a href='https://en.wikipedia.org/wiki/Mosque_of_Ibn_Tulun' target='_newtab'> Wikipedia </a>");
+      
+       var MosqueMadrassaofSultanHassanmarker = L.marker([30.0323, 31.2562], {icon: MosqueIcon});
+      MosqueMadrassaofSultanHassanmarker.bindPopup("<b> Mosque-Madrassa of Sultan Hassan! </b><br>The Mamluk rulers of Egypt built the Mosque-Madrassa in 1356-1359 CE, designing it to include all four Sunni schools of thought. It is one of the largest mosques in the world, and was the most expensive mosque built in medieval Cairo. It is said that a considerable amount of its funding was expropriated from the estates of those who died when the Black Death struck Cairo, 1348. Built close to the Citadel, the Sultan was able to look on its impressive structure – but this proximity also allowed the mosque to serve as the base from which rebels were able to attack the Citadel.<br> <br> <a href='https://en.wikipedia.org/wiki/Mosque-Madrassa_of_Sultan_Hassan' target='_newtab'> Wikipedia </a>");
+      
+      var AlRifaimarker = L.marker([30.154564, 31.310406], {icon: MosqueIcon});
+      AlRifaimarker.bindPopup("<b> Al-Rifa'i Mosque! </b><br>Al Refai Mosque took 40 years to build, starting in 1869 and completed in 1912. The immediate purpose behind its construction was to house the tombs of many royal Egyptian families, including Egypt's last King Farouk. The government's broader goals for its construction were to associate themselves with the perceived glory of earlier periods in Egypt's Islamic history as well as to modernize the city. The mosque is built on a pilgrimage site for locals who believed in the mystical healing powers of medieval Islamic saint Shaykh Ali Al-Refai's tomb. It is also the resting place of many members of Egyptian royalty, including the last king of the country, Farouk. <br> <br> <a href='https://en.wikipedia.org/wiki/Al-Rifa%27i_Mosque' target='_newtab'> Wikipedia </a>");
+      
+      var AlHusseinmarker = L.marker([30.047778, 31.263056], {icon: MosqueIcon});
+      AlHusseinmarker.bindPopup("<b> Al-Hussein Mosque! </b><br> Built in 1154, Al Hussein mosque is situated by the popular Khan Al-Khalili market and is considered one of the holiest Islamic sites as it is believed that it is the burial place of the head of Hussein, the grandson of prophet Mohammad. The mosque also houses the oldest complete manuscript of the Holy Quran. It was built on the graveyard of the Fatimid Caliphs, although this fact was not known until 20th-century restoration of the site. The mosque has historically been a locus of conflict between Shia and Salafist Muslims on certain days of the Islamic calendar, owing to differing interpretations of the significance of the site and certain religious services. <br><br> <a href='https://en.wikipedia.org/wiki/Al-Hussein_Mosque' target='_newtab'> Wikipedia </a>");
+      
+       var BenEzraSynagoguemarker = L.marker([30.005794, 31.231022], {icon: SynagogueIcon});
+      BenEzraSynagoguemarker.bindPopup("<b> Ben Ezra Synagogue! </b><br> Ben Ezra Synagogue has occupied three distinct buildings. It moved to its current site - a former church - in the 1890s. It occupied its original site at least as early as 882 CE, and may be pre-Islamic - but little is known about its history prior to the 1012 CE when the Fatimid Caliph ordered all Christian and Jewish places of worship destroyed. Today, the Jewish community in Egypt is considerably diminished, having numbered about 80,000 people in the early 20th century yet today includes fewer than a dozen people of Egyptian ancestry residing in Cairo. Accordingly, the Ben Ezra Synagogue is now a tourist attraction and museum, rather than a functioning congregation. <br> <br> <a href='https://en.wikipedia.org/wiki/Ben_Ezra_Synagogue' target='_newtab'> Wikipedia </a>");//.openPopup();
+	    
+	   var Pharaonic = L.layerGroup([Gizamarker, Sphinxmarker, Saqqaramarker]);
+	   
+	   var Jewish = L.layerGroup([BenEzraSynagoguemarker]);
+	   
+	   var Christian = L.layerGroup([ChurchOfStGeorgemarker, HangingChurchmarker, SaintMercuriusChurchmarker, SaintMarksCathedralmarker]);
+	   
+	   var Muslim = L.layerGroup([Azharmarker, MosqueofMuhammadAlimarker, MosqueofAmrmarker, MosqueofIbnTulunmarker, MosqueMadrassaofSultanHassanmarker, AlRifaimarker, AlHusseinmarker]);
+	    
+	    //(var PharaonicOverlay = {
+    //"Pharaonic": Pharaonic
+//};	    
+	    //var JewishOverlay = {
+    //"Jewish": Jewish
+//};
+	    //var ChristianOverlay = {
+    //"Christian": Christian
+	    
+//};    
+	 //var MuslimOverlay = {
+    //"Muslim": Muslim
+	// }
+	    //L.control.layers(PharaonicOverlay, JewishOverlay, ChristianOverlay, MuslimOverlay).addTo(mymap);
+	    
+	    var overlays = {
+		 "Pharaonic": Pharaonic,
+		    "Jewish": Jewish,
+		      "Christian": Christian,
+		        "Muslim": Muslim
+	    }
+	   
+	    var layerControl = L.control.layers(null, overlays);
+	    
+	    mymap.addControl(layerControl);
+	  
+	    
+	    
+    </script>
+    </body>
+</html>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="leaflet.css" />
 	<script src="leaflet.js">  </script>
 	  <header>
-		<h3>Test Header Title ONE</h3>
+		<h3>Test Header Title THREE</h3>
 		<p>Information we can put here.</p>
 	</header>
   </head>
@@ -81,7 +81,7 @@ var overlayMaps = {
 "Small Schools": smallSchoolsGroup
 }
 	   
-L.control.layers(null, overlayMaps).addTo(mymap);   
+L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
 
 	    
 	    

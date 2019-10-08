@@ -60,8 +60,8 @@ var overlayMaps = {
 //add the groups to the map
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
 
-	
-var polygon = L.polygon([
+//make the Viken polygon outline	
+var polygonViken = L.polygon([
 [58.906781, 10.630442],
 [58.951661, 10.943571],
 [58.998803, 11.096762],
@@ -173,7 +173,29 @@ var polygon = L.polygon([
 [58.922610, 10.637919]
  ]).addTo(mymap);
 
-polygon.setStyle({ fillColor: 'red' });
+// set the color for the polygon
+polygonViken.setStyle({ fillColor: 'red' });
+
+//make the Oslo kommune polygon outline and "remove" it
+var polygonOslo = L.polygon([
+[58.906781, 10.630442],
+[58.951661, 10.943571],
+[58.998803, 11.096762],
+[59.082769, 11.152784],
+[59.118467, 11.345356],
+[58.996850, 11.470123],
+[58.908066, 11.479060],
+[58.925068, 11.645197],
+[59.088202, 11.762990],
+[59.245838, 11.807434],
+[59.598364, 11.687215],
+[59.662732, 11.840459],
+[59.700196, 11.873713],
+[59.699407, 11.930102]
+ ]).addTo(mymap);
+
+// set the color for the polygon
+polygonOslo.setStyle({ fillColor: 'green' });
 
  /*example of customizing the pop up text with links and other HTML tags   
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});

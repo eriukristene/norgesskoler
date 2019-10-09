@@ -20,6 +20,10 @@
        popupAnchor: [-3, -76]
     });
 
+var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 50, popupAnchor: [-3, -76]});
+bigSchool.bindPopup ("Hello this is a school.");
+bigSchool.addTo(bigSchoolsGroup);
+/*
 //define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
 // see tutorial at https://leafletjs.com/examples/layers-control/
 var bigSchoolsGroup = L.layerGroup();
@@ -38,6 +42,7 @@ schoolTwo.addTo(mediumSchoolsGroup);
 var schoolThree = L.marker([59.9560, 11.0504], {icon: smallIcon});
 schoolThree.bindPopup ("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 schoolThree.addTo(smallSchoolsGroup); 
+*/
 
 // define the map and set its location via ([latitude, longitude], map zoom)
 var mymap = L.map('mapid', {layers:[bigSchoolsGroup,mediumSchoolsGroup,smallSchoolsGroup]}).setView([59.9139, 10.7522], 9); 

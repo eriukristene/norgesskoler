@@ -59,7 +59,7 @@ var overlayMaps = {
 
 //add the groups to the map
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
-
+/*
 mymap.on('zoomend', function() {
         var currentZoom = map.getZoom();
         var myRadius = currentZoom*(1/2); //or whatever ratio you prefer
@@ -68,7 +68,7 @@ mymap.on('zoomend', function() {
 	    //mediumSchoolsGroup.setStyle({radius: myRadius});
 	   // smallSchoolsGroup.setStyle({radius: myRadius});
     });
-
+*/
 //make the Viken polygon outline	
 var polygonViken = L.polygon(
 [ //begin creating Viken polygon
@@ -239,7 +239,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle(
 	{
-	fillColor: 'red',
+	fillColor: 'blue',
 	color: 'black'
 	}
 	

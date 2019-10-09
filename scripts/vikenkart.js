@@ -8,14 +8,14 @@
       
       var mediumIcon = L.icon ({
        iconUrl: 'medium.png',                
-       iconSize: [50,50],
+       iconSize: [75,75],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });
 
       var smallIcon = L.icon ({
        iconUrl: 'small.png',                
-       iconSize: [32,37],
+       iconSize: [50,50],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });

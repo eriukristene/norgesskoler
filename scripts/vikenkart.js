@@ -225,8 +225,8 @@ var polygonOslo = L.polygon([
  ]).addTo(mymap);
 
 // set the color for the Oslo polygon
-polygonOslo.setStyle();
-//polygonOslo.setStyle({ fillColor: 'green' });
+//polygonOslo.setStyle();
+polygonOslo.setStyle({ fillColor: 'green' });
 
  /*example of customizing the pop up text with links and other HTML tags /  
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});

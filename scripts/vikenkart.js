@@ -231,7 +231,7 @@ var polygonViken = L.polygon(
 polygonViken.setStyle(
 	{
 	fillColor: 'red',
-	color: 'white'
+	color: 'black'
 	}
 	
 ); //end setStyle()

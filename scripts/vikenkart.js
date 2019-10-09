@@ -28,7 +28,7 @@ var bigSchoolsGroup = L.layerGroup();
 var mediumSchoolsGroup = L.layerGroup();
 var smallSchoolsGroup = L.layerGroup();
 
-var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 50, iconAnchor: [30.072222, 31.275556], popupAnchor: [-3, -76]});
+var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 100, iconAnchor: [30.072222, 31.275556], popupAnchor: [-3, -76]});
 bigSchool.bindPopup ("Hello this is a school.");
 bigSchool.addTo(bigSchoolsGroup);
 /*	    

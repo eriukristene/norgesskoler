@@ -1,21 +1,21 @@
 //define the icons we will use to place on the map to indicate locations
       var bigIcon = L.icon ({
        iconUrl: 'big.png',                
-       iconSize: [50,50],
+       iconSize: [75,75],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });
       
       var mediumIcon = L.icon ({
        iconUrl: 'big.png',                
-       iconSize: [25,25],
+       iconSize: [50,50],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });
 
       var smallIcon = L.icon ({
        iconUrl: 'big.png',                
-       iconSize: [12,12],
+       iconSize: [25,25],
        iconAnchor: [30.072222, 31.275556],
        popupAnchor: [-3, -76]
     });

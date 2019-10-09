@@ -230,64 +230,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle({ fillColor: 'red' });
 //polygonViken.setStyle();
-/*
-//make the Oslo kommune polygon outline and "remove" it
-var polygonOslo = L.polygon([
-[59.833058, 10.933037],
-[59.869640, 10.905701],
-[59.921364, 10.915503],
-[59.944095, 10.942430],
-[59.950129, 10.949096],
-[59.961736, 10.935242],
-[59.983197, 10.923726],
-[59.984361, 10.917934],
-[59.980886, 10.912130],
-[60.002068, 10.848103],
-[59.999149, 10.835439],
-[60.023987, 10.827661],
-[60.017170, 10.818888],
-[60.065389, 10.815973],
-[60.067165, 10.786733],
-[60.098782, 10.756463],
-[60.112776, 10.768121],
-[60.125491, 10.738269],
-[60.119805, 10.70839],
-[60.125603, 10.704715],
-[60.133840, 10.68081],
-[60.133364, 10.604637],
-[60.116913, 10.574634],
-[60.094203, 10.594960],
-[60.077823, 10.599182],
-[60.076139, 10.581502],
-[60.017283, 10.490798],
-[60.002173, 10.523596],
-[59.997973, 10.557596],
-[59.978903, 10.593062],
-[59.978215, 10.614285],
-[59.941427, 10.637019],
-[59.923725, 10.627180],
-[59.912414, 10.646979],
-[59.886941, 10.661147],
-[59.877752, 10.692193],
-[59.878464, 10.731683],
-[59.823625, 10.796803],
-[59.825286, 10.813066],
-[59.818955, 10.818109],
-[59.815580, 10.846656],
-[59.810092, 10.857568],
-[59.814648, 10.870353],
-[59.812939, 10.880086],
-[59.821100, 10.891393],
-[59.827126, 10.909058],
-[59.828535, 10.927424],
-[59.832435, 10.935204]
- ]).addTo(mymap);
 
-// set the color for the Oslo polygon
-//polygonOslo.setStyle();
-polygonOslo.setStyle({ fillColor: 'green' });
-//polygonOslo.remove();
-*/
  /*example of customizing the pop up text with links and other HTML tags /  
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});
       schoolOne.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");

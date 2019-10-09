@@ -174,7 +174,8 @@ var polygonViken = L.polygon([
  ]).addTo(mymap);
 
 // set the color for the Viken polygon
-polygonViken.setStyle({ fillColor: 'red' });
+//polygonViken.setStyle({ fillColor: 'red' });
+polygonViken.setStyle();
 
 //make the Oslo kommune polygon outline and "remove" it
 var polygonOslo = L.polygon([

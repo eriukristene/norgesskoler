@@ -64,9 +64,9 @@ mymap.on('zoomend', function() {
         var currentZoom = map.getZoom();
         var myRadius = currentZoom*(1/2); //or whatever ratio you prefer
         //var myWeight = currentZoom*(1/5); //or whatever ratio you prefer
-            bigSchoolsGroup.setStyle({radius: myRadius, weight: setWeight});
-	    mediumSchoolsGroup.setStyle({radius: myRadius, weight: setWeight});
-	    smallSchoolsGroup.setStyle({radius: myRadius, weight: setWeight});
+            bigSchoolsGroup.setStyle({radius: myRadius});
+	    mediumSchoolsGroup.setStyle({radius: myRadius});
+	    smallSchoolsGroup.setStyle({radius: myRadius});
     });
 
 //make the Viken polygon outline	
@@ -239,7 +239,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle(
 	{
-	fillColor: 'blue',
+	fillColor: 'red',
 	color: 'black'
 	}
 	

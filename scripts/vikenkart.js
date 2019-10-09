@@ -20,16 +20,18 @@
        popupAnchor: [-3, -76]
     });
 
-var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 50, popupAnchor: [-3, -76]});
-bigSchool.bindPopup ("Hello this is a school.");
-bigSchool.addTo(bigSchoolsGroup);
-/*
+
+
 //define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
 // see tutorial at https://leafletjs.com/examples/layers-control/
 var bigSchoolsGroup = L.layerGroup();
 var mediumSchoolsGroup = L.layerGroup();
 var smallSchoolsGroup = L.layerGroup();
-	    
+
+var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 50, popupAnchor: [-3, -76]});
+bigSchool.bindPopup ("Hello this is a school.");
+bigSchool.addTo(bigSchoolsGroup);
+/*	    
 //define each school with its location, information text, and add to layer group
 var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
 schoolOne.bindPopup ("Hello this is a school.");

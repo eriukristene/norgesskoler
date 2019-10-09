@@ -228,7 +228,7 @@ var polygonOslo = L.polygon([
 polygonOslo.setStyle();
 //polygonOslo.setStyle({ fillColor: 'green' });
 
- /*example of customizing the pop up text with links and other HTML tags   
+ /*example of customizing the pop up text with links and other HTML tags /  
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});
       schoolOne.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 */	  

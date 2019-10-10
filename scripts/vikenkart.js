@@ -16,6 +16,16 @@ var bigSchoolsGroup = L.layerGroup().addTo(mymap);
 var mediumSchoolsGroup = L.layerGroup().addTo(mymap);
 var smallSchoolsGroup = L.layerGroup().addTo(mymap);
 
+//create the legend of each group of schools as overlay list with checkboxes
+var overlayMaps = {
+"Big Schools": bigSchoolsGroup,
+"Medium Schools": mediumSchoolsGroup,
+"Small Schools": smallSchoolsGroup
+}
+
+//add the groups to the map
+L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
+
 //define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
 var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000});
 bigSchool.bindPopup("Hello this is a school.");

@@ -76,6 +76,25 @@ mymap.on('zoomend', function() {
 	   // smallSchoolsGroup.setStyle({radius: myRadius});
     });
 */
+var myZoom = {
+  start:  mymap.getZoom(),
+  end: mymap.getZoom()
+};
+
+mymap.on('zoomstart', function(e) {
+   myZoom.start = mymap.getZoom();
+});
+
+mymap.on('zoomend', function(e) {
+    myZoom.end = mymap.getZoom();
+    var diff = myZoom.start - myZoom.end;
+    if (diff > 0) {
+        bigSchool.setRadius(bigSchool.getRadius() * 2);
+    } else if (diff < 0) {
+        bigSchool.setRadius(bigSchool.getRadius() / 2);
+    }
+});
+
 //make the Viken polygon outline	
 var polygonViken = L.polygon(
 [ //begin creating Viken polygon

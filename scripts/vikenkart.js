@@ -28,21 +28,30 @@ var bigSchoolsGroup = L.layerGroup();
 var mediumSchoolsGroup = L.layerGroup();
 var smallSchoolsGroup = L.layerGroup();
 
-var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 100, iconAnchor: [30.072222, 31.275556], popupAnchor: [-3, -76]});
-bigSchool.bindPopup ("Hello this is a school.");
+var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 1000, iconAnchor: [30.072222, 31.275556], popupAnchor: [-3, -76]});
+bigSchool.bindPopup("Hello this is a school.");
 bigSchool.addTo(bigSchoolsGroup);
+
+var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 500, iconAnchor: [30.072222, 31.275556], popupAnchor: [-3, -76]});
+mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
+mediumSchool.addTo(mediumSchoolsGroup);
+
+var smallSchool = L.circle([59.9560, 11.0504], {color: "green", radius: 250, iconAnchor: [30.072222, 31.275556], popupAnchor: [-3, -76]});
+smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
+smallSchool.addTo(smallSchoolsGroup);
+
 /*	    
 //define each school with its location, information text, and add to layer group
 var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
-schoolOne.bindPopup ("Hello this is a school.");
+schoolOne.bindPopup("Hello this is a school.");
 schoolOne.addTo(bigSchoolsGroup);
 
 var schoolTwo = L.marker([59.7441, 10.2045], {icon: mediumIcon});
-schoolTwo.bindPopup ("Hello this is a school as well but it is a little smaller.");
+schoolTwo.bindPopup("Hello this is a school as well but it is a little smaller.");
 schoolTwo.addTo(mediumSchoolsGroup); 
 	    
 var schoolThree = L.marker([59.9560, 11.0504], {icon: smallIcon});
-schoolThree.bindPopup ("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
+schoolThree.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 schoolThree.addTo(smallSchoolsGroup); 
 */
 

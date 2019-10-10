@@ -66,34 +66,6 @@ var overlayMaps = {
 
 //add the groups to the map
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
-/*
-mymap.on('zoomend', function() {
-        var currentZoom = map.getZoom();
-        var myRadius = currentZoom*(1/2); //or whatever ratio you prefer
-        //var myWeight = currentZoom*(1/5); //or whatever ratio you prefer
-            overlayMaps.setStyle({radius: myRadius});
-	    //mediumSchoolsGroup.setStyle({radius: myRadius});
-	   // smallSchoolsGroup.setStyle({radius: myRadius});
-    });
-*/
-var myZoom = {
-  start:  mymap.getZoom(),
-  end: mymap.getZoom()
-};
-
-mymap.on('zoomstart', function(e) {
-   myZoom.start = mymap.getZoom();
-});
-
-mymap.on('zoomend', function(e) {
-    myZoom.end = mymap.getZoom();
-    var diff = myZoom.start - myZoom.end;
-    if (diff > 0) {
-        bigSchool.setRadius(bigSchool.getRadius() * 2);
-    } else if (diff < 0) {
-        bigSchool.setRadius(bigSchool.getRadius() / 2);
-    }
-});
 
 //make the Viken polygon outline	
 var polygonViken = L.polygon(
@@ -265,7 +237,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle(
 	{
-	fillColor: 'red',
+	fillColor: 'blue',
 	color: 'black'
 	}
 	

@@ -1,3 +1,14 @@
+// define the map and set its location via ([latitude, longitude], map zoom)
+var mymap = L.map('mapid', {layers:[bigSchoolsGroup,mediumSchoolsGroup,smallSchoolsGroup]}).setView([59.9139, 10.7522], 9); 
+    
+//access the MapBox maps API, with generated API key/access token from Erin's MapBox account
+    L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18.5,
+    id: 'your.mapbox.project.id',
+    accessToken: 'pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww'
+}).addTo(mymap);
+
 //define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
 // see tutorial at https://leafletjs.com/examples/layers-control/
 var bigSchoolsGroup = L.layerGroup();
@@ -17,19 +28,6 @@ var smallSchool = L.circle([59.9560, 11.0504], {color: "pink", radius: 500});
 smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 smallSchool.addTo(smallSchoolsGroup);
 
-
-
-// define the map and set its location via ([latitude, longitude], map zoom)
-var mymap = L.map('mapid', {layers:[bigSchoolsGroup,mediumSchoolsGroup,smallSchoolsGroup]}).setView([59.9139, 10.7522], 9); 
-    
-//access the MapBox maps API, with generated API key/access token from Erin's MapBox account
-    L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    maxZoom: 18.5,
-    id: 'your.mapbox.project.id',
-    accessToken: 'pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww'
-}).addTo(mymap);
-	 
 //create the legend of each group of schools as overlay list with checkboxes
 var overlayMaps = {
 "Big Schools": bigSchoolsGroup,

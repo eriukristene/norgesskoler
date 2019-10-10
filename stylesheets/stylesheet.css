@@ -3,13 +3,9 @@
 }
 
 header {
-  
+  background-image: url("./images/skole-ikon.png")
   background-color: #E5DAD0;
   padding: 25px 25px 25px 25px;
-}
-
-.header-image {
-  background-image: url("./images/skole-ikon.png");
 }
 
 body {

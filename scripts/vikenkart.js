@@ -77,7 +77,7 @@ var overlayMaps = {
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
 
 var testSchool = new L.CircleMarker([59.836554, 11.836793], {
-        radius: 5,
+        radius: 1000,
         fillColor: "#ff7800",
         color: "#000",
         weight: 1,
@@ -85,6 +85,8 @@ var testSchool = new L.CircleMarker([59.836554, 11.836793], {
         fillOpacity: 0.8,
         title: "test"
     }).addTo(mymap);
+
+testSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
 
 //make the Viken polygon outline	
 var polygonViken = L.polygon(

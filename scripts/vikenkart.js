@@ -5,15 +5,15 @@ var mediumSchoolsGroup = L.layerGroup();
 var smallSchoolsGroup = L.layerGroup();
 
 //define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
-var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 2000});
+var bigSchool = L.circle([59.9134, 10.8418], {color: "black", radius: 2000});
 bigSchool.bindPopup("Hello this is a school.");
 bigSchool.addTo(bigSchoolsGroup);
 
-var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000});
+var mediumSchool = L.circle([59.7441, 10.2045], {color: "purple", radius: 1000});
 mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
 mediumSchool.addTo(mediumSchoolsGroup);
 
-var smallSchool = L.circle([59.9560, 11.0504], {color: "green", radius: 500});
+var smallSchool = L.circle([59.9560, 11.0504], {color: "pink", radius: 500});
 smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 smallSchool.addTo(smallSchoolsGroup);
 

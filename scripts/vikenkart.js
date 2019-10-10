@@ -26,7 +26,7 @@ var overlayMaps = {
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
 
 //define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
-var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000});
+var bigSchool = L.circle([59.780680, 9.938158], {color: "green", radius: 2000});
 bigSchool.bindPopup("Hello this is a school.");
 bigSchool.addTo(bigSchoolsGroup);
 

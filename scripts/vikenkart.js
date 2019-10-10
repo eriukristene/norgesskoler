@@ -15,6 +15,16 @@ var bigSchoolsGroup = L.layerGroup();
 var mediumSchoolsGroup = L.layerGroup();
 var smallSchoolsGroup = L.layerGroup();
 
+//create the legend of each group of schools as overlay list with checkboxes
+var overlayMaps = {
+"Big Schools": bigSchoolsGroup,
+"Medium Schools": mediumSchoolsGroup,
+"Small Schools": smallSchoolsGroup
+}
+
+//add the groups to the map
+L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
+
 //define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
 var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000}).addTo(mymap);
 bigSchool.bindPopup("Hello this is a school.");
@@ -29,15 +39,7 @@ smallSchool.bindPopup("Hello this is a school but it is the smallest of the scho
 smallSchool.addTo(smallSchoolsGroup);
 
 
-//create the legend of each group of schools as overlay list with checkboxes
-var overlayMaps = {
-"Big Schools": bigSchoolsGroup,
-"Medium Schools": mediumSchoolsGroup,
-"Small Schools": smallSchoolsGroup
-}
 
-//add the groups to the map
-L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
 
 
 
@@ -216,7 +218,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle(
 	{
-	fillColor: 'pink',
+	fillColor: 'purple',
 	color: 'black'
 	}
 	

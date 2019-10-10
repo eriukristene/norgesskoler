@@ -3,9 +3,9 @@
 }
 
 header {
+  background-image: url("./images/vikenlogo.png");
   background-color: #E5DAD0;
   padding: 25px 25px 25px 25px;
-  background-image: url("./images/vikenlogo.png");
 }
 
 body {

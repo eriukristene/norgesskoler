@@ -8,7 +8,7 @@ header {
   padding: 25px 25px 25px 25px;
   background-repeat: no-repeat;
   width: 100%;
-  height: 140px;
+  height: 135px;
   position: relative;
   display:block
 }
@@ -25,7 +25,7 @@ body {
 }
 
 #content {
-  padding: 0px 25px 0px 25px; /* top right bottom left */
+  padding: 25px 25px 25px 25px; /* top right bottom left */
   background-color: #ffffff;
 }
 

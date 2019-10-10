@@ -22,8 +22,7 @@ bigSchool.bindPopup("Hello this is a school.");
 bigSchool.addTo(bigSchoolsGroup);
 
 var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000});
-//mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
-mediumSchool.bindPopup("Hello this is a school.");
+mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
 mediumSchool.addTo(mediumSchoolsGroup);
 
 var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500});

@@ -11,9 +11,9 @@ var mymap = L.map('mapid').setView([59.9139, 10.7522], 9);
 
 //define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
 // see tutorial at https://leafletjs.com/examples/layers-control/
-var bigSchoolsGroup = L.layerGroup();
-var mediumSchoolsGroup = L.layerGroup();
-var smallSchoolsGroup = L.layerGroup();
+var bigSchoolsGroup = L.layerGroup().addTo(myMap);
+var mediumSchoolsGroup = L.layerGroup().addTo(myMap);
+var smallSchoolsGroup = L.layerGroup().addTo(myMap);
 
 //create the legend of each group of schools as overlay list with checkboxes
 var overlayMaps = {
@@ -26,15 +26,15 @@ var overlayMaps = {
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
 
 //define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
-var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000}).addTo(mymap);
+var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000});
 bigSchool.bindPopup("Hello this is a school.");
 bigSchool.addTo(bigSchoolsGroup);
 
-var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000}).addTo(mymap);
+var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000});
 mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
 mediumSchool.addTo(mediumSchoolsGroup);
 
-var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500}).addTo(mymap);
+var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500});
 smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 smallSchool.addTo(smallSchoolsGroup);
 
@@ -218,7 +218,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle(
 	{
-	fillColor: 'purple',
+	fillColor: 'green',
 	color: 'black'
 	}
 	

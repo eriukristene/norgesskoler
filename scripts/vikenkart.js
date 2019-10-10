@@ -15,6 +15,10 @@ var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000});
 bigSchool.bindPopup("Hello this is a school.");
 //bigSchool.addTo(bigSchoolsGroup);
 
+var mediumSchool = L.circle([59.7441, 10.2045], {color: "green", radius: 2000});
+mediumSchool.bindPopup("Hello this is a school.");
+
+/*
 var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000});
 mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
 //mediumSchool.addTo(mediumSchoolsGroup);
@@ -22,6 +26,7 @@ mediumSchool.bindPopup("Hello this is a school as well but it is a little smalle
 var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500});
 smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 //smallSchool.addTo(smallSchoolsGroup);
+*/
 
 //define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
 // see tutorial at https://leafletjs.com/examples/layers-control/
@@ -216,7 +221,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle(
 	{
-	fillColor: 'blue',
+	fillColor: 'red',
 	color: 'black'
 	}
 	

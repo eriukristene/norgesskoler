@@ -25,13 +25,14 @@ body {
 
 #content {
   padding: 5px 25px 5px 25px; /* top right bottom left */
-  background-color: #A62CB1; /* #ffffff */
+  background-color: #ffffff;
 }
 
 a {
   color: #1e6bb8;
   text-decoration: none; }
-  a:hover {
+
+a:hover {
     text-decoration: underline; }
 
 .btn {

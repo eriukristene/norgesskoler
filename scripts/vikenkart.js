@@ -1,59 +1,23 @@
-//define the icons we will use to place on the map to indicate locations
-      var bigIcon = L.icon ({
-       iconUrl: './images/skole-ikon.png',                
-       iconSize: [45,45],
-       iconAnchor: [30.072222, 31.275556],
-       popupAnchor: [-3, -76]
-    });
-      
-      var mediumIcon = L.icon ({
-       iconUrl: './images/skole-ikon.png',                
-       iconSize: [25,25],
-       iconAnchor: [30.072222, 31.275556],
-       popupAnchor: [-3, -76]
-    });
-
-      var smallIcon = L.icon ({
-       iconUrl: './images/skole-ikon.png',                
-       iconSize: [18,18],
-       iconAnchor: [30.072222, 31.275556],
-       popupAnchor: [-3, -76]
-    });
-
-
-
 //define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
 // see tutorial at https://leafletjs.com/examples/layers-control/
 var bigSchoolsGroup = L.layerGroup();
 var mediumSchoolsGroup = L.layerGroup();
 var smallSchoolsGroup = L.layerGroup();
 
-var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 1000, iconAnchor: [30.072222, 31.275556], popupAnchor: [-3, -76]});
+//define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
+var bigSchool = L.circle([59.9134, 10.8418], {color: "red", radius: 75000});
 bigSchool.bindPopup("Hello this is a school.");
 bigSchool.addTo(bigSchoolsGroup);
 
-var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 500, iconAnchor: [30.072222, 31.275556], popupAnchor: [-3, -76]});
+var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 50000});
 mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
 mediumSchool.addTo(mediumSchoolsGroup);
 
-var smallSchool = L.circle([59.9560, 11.0504], {color: "green", radius: 250, iconAnchor: [30.072222, 31.275556], popupAnchor: [-3, -76]});
+var smallSchool = L.circle([59.9560, 11.0504], {color: "green", radius: 25000});
 smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 smallSchool.addTo(smallSchoolsGroup);
 
-/*	    
-//define each school with its location, information text, and add to layer group
-var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
-schoolOne.bindPopup("Hello this is a school.");
-schoolOne.addTo(bigSchoolsGroup);
 
-var schoolTwo = L.marker([59.7441, 10.2045], {icon: mediumIcon});
-schoolTwo.bindPopup("Hello this is a school as well but it is a little smaller.");
-schoolTwo.addTo(mediumSchoolsGroup); 
-	    
-var schoolThree = L.marker([59.9560, 11.0504], {icon: smallIcon});
-schoolThree.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
-schoolThree.addTo(smallSchoolsGroup); 
-*/
 
 // define the map and set its location via ([latitude, longitude], map zoom)
 var mymap = L.map('mapid', {layers:[bigSchoolsGroup,mediumSchoolsGroup,smallSchoolsGroup]}).setView([59.9139, 10.7522], 9); 
@@ -75,18 +39,6 @@ var overlayMaps = {
 
 //add the groups to the map
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
-
-var testSchool = new L.CircleMarker([59.836554, 11.836793], {
-        radius: 50,
-        fillColor: "#ff7800",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8,
-        title: "test"
-    }).addTo(mymap);
-
-testSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
 
 //make the Viken polygon outline	
 var polygonViken = L.polygon(
@@ -269,3 +221,42 @@ polygonViken.setStyle(
       var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});
       schoolOne.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 */	  
+
+
+/* old code using the Icons as the marker for the schools
+// if you want to use this, place it before the implementation of the map at the top of the javascript file
+//define the icons we will use to place on the map to indicate locations
+      var bigIcon = L.icon ({
+       iconUrl: './images/skole-ikon.png',                
+       iconSize: [45,45],
+       iconAnchor: [30.072222, 31.275556],
+       popupAnchor: [-3, -76]
+    });
+      
+      var mediumIcon = L.icon ({
+       iconUrl: './images/skole-ikon.png',                
+       iconSize: [25,25],
+       iconAnchor: [30.072222, 31.275556],
+       popupAnchor: [-3, -76]
+    });
+
+      var smallIcon = L.icon ({
+       iconUrl: './images/skole-ikon.png',                
+       iconSize: [18,18],
+       iconAnchor: [30.072222, 31.275556],
+       popupAnchor: [-3, -76]
+    });
+
+//define each school with its location, information text, and add to layer group
+var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
+schoolOne.bindPopup("Hello this is a school.");
+schoolOne.addTo(bigSchoolsGroup);
+
+var schoolTwo = L.marker([59.7441, 10.2045], {icon: mediumIcon});
+schoolTwo.bindPopup("Hello this is a school as well but it is a little smaller.");
+schoolTwo.addTo(mediumSchoolsGroup); 
+	    
+var schoolThree = L.marker([59.9560, 11.0504], {icon: smallIcon});
+schoolThree.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
+schoolThree.addTo(smallSchoolsGroup); 
+*/

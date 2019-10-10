@@ -40,6 +40,16 @@ var smallSchool = L.circle([59.9560, 11.0504], {color: "green", radius: 250, ico
 smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 smallSchool.addTo(smallSchoolsGroup);
 
+var testSchool = new L.CircleMarker([59.836554, 11.836793], {
+        radius: 5,
+        fillColor: "#ff7800",
+        color: "#000",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8,
+        title: "test"
+    }).addTo(mymap);
+
 /*	    
 //define each school with its location, information text, and add to layer group
 var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});

@@ -24,7 +24,7 @@ body {
 }
 
 #content {
-  padding: 25px 25px 10px 25px; /* top right bottom left */
+  padding: 5px 25px 5px 25px; /* top right bottom left */
   background-color: #A67EB1; /* #ffffff */
 }
 

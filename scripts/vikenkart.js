@@ -32,13 +32,13 @@ smallSchool.bindPopup("Hello this is a school but it is the smallest of the scho
 // see tutorial at https://leafletjs.com/examples/layers-control/
 var bigSchoolsGroup = L.layerGroup([bigSchool]).addTo(mymap);
 var mediumSchoolsGroup = L.layerGroup([mediumSchool]).addTo(mymap);
-var smallSchoolsGroup = L.layerGroup([smallSchool]).addTo(mymap);
+//var smallSchoolsGroup = L.layerGroup([smallSchool]).addTo(mymap);
 
 //create the legend of each group of schools as overlay list with checkboxes
 var overlayMaps = {
 "Big Schools": bigSchoolsGroup,
 "Medium Schools": mediumSchoolsGroup,
-"Small Schools": smallSchoolsGroup
+//"Small Schools": smallSchoolsGroup
 }
 
 //add the groups to the map

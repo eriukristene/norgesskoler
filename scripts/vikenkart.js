@@ -13,8 +13,8 @@ var mymap = L.map('mapid').setView([59.9139, 10.7522], 9);
 //define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
 // see tutorial at https://leafletjs.com/examples/layers-control/
 var bigSchoolsGroup = L.layerGroup().addTo(mymap);
-var mediumSchoolsGroup = L.layerGroup();
-var smallSchoolsGroup = L.layerGroup();
+var mediumSchoolsGroup = L.layerGroup().addTo(mymap);
+var smallSchoolsGroup = L.layerGroup().addTo(mymap);
 
 //define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
 var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000});

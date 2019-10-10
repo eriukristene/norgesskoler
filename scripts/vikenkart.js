@@ -39,16 +39,6 @@ var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500});
 smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
 smallSchool.addTo(smallSchoolsGroup);
 
-//create the legend of each group of schools as overlay list with checkboxes
-var overlayMaps = {
-"Big Schools": bigSchoolsGroup,
-"Medium Schools": mediumSchoolsGroup,
-"Small Schools": smallSchoolsGroup
-}
-
-//add the groups to the map
-L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);   
-
 //make the Viken polygon outline	
 var polygonViken = L.polygon(
 [ //begin creating Viken polygon
@@ -219,7 +209,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle(
 	{
-	fillColor: 'green',
+	fillColor: 'red',
 	color: 'black'
 	}
 	

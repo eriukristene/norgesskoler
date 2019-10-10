@@ -5,13 +5,7 @@
 header {
   background-color: #E5DAD0;
   padding: 25px 25px 25px 25px;
-}
-
-.header-img {
-  width: 100%;
-  height: 400px;
-  background: url(./images/vikenlogo.png);
-  background-size: cover;
+  background-image: url("./images/vikenlogo.png");
 }
 
 body {

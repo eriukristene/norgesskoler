@@ -11,34 +11,26 @@ var mymap = L.map('mapid').setView([59.9139, 10.7522], 9);
 }).addTo(mymap);
 
 //define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
-var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000});
+var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000}).addTo(mymap);
 bigSchool.bindPopup("Hello this is a school.");
-//bigSchool.addTo(bigSchoolsGroup);
 
-var mediumSchool = L.circle([59.7441, 10.2045], {color: "green", radius: 2000});
-mediumSchool.bindPopup("Hello this is a school.");
-
-/*
-var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000});
+var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000}).addTo(mymap);
 mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
-//mediumSchool.addTo(mediumSchoolsGroup);
 
-var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500});
+var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500}).addTo(mymap);
 smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
-//smallSchool.addTo(smallSchoolsGroup);
-*/
 
 //define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
 // see tutorial at https://leafletjs.com/examples/layers-control/
-var bigSchoolsGroup = L.layerGroup([bigSchool]).addTo(mymap);
-var mediumSchoolsGroup = L.layerGroup([mediumSchool]).addTo(mymap);
-//var smallSchoolsGroup = L.layerGroup([smallSchool]).addTo(mymap);
+var bigSchoolsGroup = L.layerGroup([bigSchool]);
+var mediumSchoolsGroup = L.layerGroup([mediumSchool]);
+var smallSchoolsGroup = L.layerGroup([smallSchool]);
 
 //create the legend of each group of schools as overlay list with checkboxes
 var overlayMaps = {
 "Big Schools": bigSchoolsGroup,
 "Medium Schools": mediumSchoolsGroup,
-//"Small Schools": smallSchoolsGroup
+"Small Schools": smallSchoolsGroup
 }
 
 //add the groups to the map

@@ -1,5 +1,4 @@
-// define the map and set its location via ([latitude, longitude], map zoom)
-//var mymap = L.map('mapid', {layers:[bigSchoolsGroup,mediumSchoolsGroup,smallSchoolsGroup]}).setView([59.9139, 10.7522], 9); 
+// define the map and set its location via ([latitude, longitude], map zoom) 
 var mymap = L.map('mapid').setView([59.9139, 10.7522], 9);    
 
 //access the MapBox maps API, with generated API key/access token from Erin's MapBox account
@@ -10,21 +9,25 @@ var mymap = L.map('mapid').setView([59.9139, 10.7522], 9);
     accessToken: 'pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww'
 }).addTo(mymap);
 
+//define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
+// see tutorial at https://leafletjs.com/examples/layers-control/
+var bigSchoolsGroup = L.layerGroup();
+var mediumSchoolsGroup = L.layerGroup();
+var smallSchoolsGroup = L.layerGroup();
+
 //define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
 var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000}).addTo(mymap);
 bigSchool.bindPopup("Hello this is a school.");
+bigSchool.addTo(bigSchoolsGroup);
 
 var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000}).addTo(mymap);
 mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
+mediumSchool.addTo(mediumSchoolsGroup);
 
 var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500}).addTo(mymap);
 smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
+smallSchool.addTo(smallSchoolsGroup);
 
-//define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
-// see tutorial at https://leafletjs.com/examples/layers-control/
-var bigSchoolsGroup = L.layerGroup([bigSchool]);
-var mediumSchoolsGroup = L.layerGroup([mediumSchool]);
-var smallSchoolsGroup = L.layerGroup([smallSchool]);
 
 //create the legend of each group of schools as overlay list with checkboxes
 var overlayMaps = {
@@ -213,7 +216,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle(
 	{
-	fillColor: 'orange',
+	fillColor: 'pink',
 	color: 'black'
 	}
 	

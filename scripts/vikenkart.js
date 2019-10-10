@@ -10,11 +10,24 @@ var mymap = L.map('mapid').setView([59.9139, 10.7522], 9);
     accessToken: 'pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww'
 }).addTo(mymap);
 
+//define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
+var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000});
+bigSchool.bindPopup("Hello this is a school.");
+//bigSchool.addTo(bigSchoolsGroup);
+
+var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000});
+mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
+//mediumSchool.addTo(mediumSchoolsGroup);
+
+var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500});
+smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
+//smallSchool.addTo(smallSchoolsGroup);
+
 //define the layer groups (overlays) for groups of schools based on size and only show them when they are clicked from the display panel
 // see tutorial at https://leafletjs.com/examples/layers-control/
-var bigSchoolsGroup = new L.layerGroup().addTo(mymap);
-var mediumSchoolsGroup = new L.layerGroup().addTo(mymap);
-var smallSchoolsGroup = new L.layerGroup().addTo(mymap);
+var bigSchoolsGroup = L.layerGroup([bigSchool]).addTo(mymap);
+var mediumSchoolsGroup = L.layerGroup([mediumSchool]).addTo(mymap);
+var smallSchoolsGroup = L.layerGroup([smallSchool]).addTo(mymap);
 
 //create the legend of each group of schools as overlay list with checkboxes
 var overlayMaps = {
@@ -26,18 +39,12 @@ var overlayMaps = {
 //add the groups to the map
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
 
-//define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
-var bigSchool = L.circle([59.9134, 10.8418], {color: "green", radius: 2000});
-bigSchool.bindPopup("Hello this is a school.");
-bigSchool.addTo(bigSchoolsGroup);
 
-var mediumSchool = L.circle([59.7441, 10.2045], {color: "blue", radius: 1000});
-mediumSchool.bindPopup("Hello this is a school as well but it is a little smaller.");
-mediumSchool.addTo(mediumSchoolsGroup);
 
-var smallSchool = L.circle([59.9560, 11.0504], {color: "yellow", radius: 500});
-smallSchool.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
-smallSchool.addTo(smallSchoolsGroup);
+
+
+
+
 
 //make the Viken polygon outline	
 var polygonViken = L.polygon(

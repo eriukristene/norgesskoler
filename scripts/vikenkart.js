@@ -180,7 +180,8 @@ var polygonViken = L.polygon(
 polygonViken.setStyle(
 	{
 	fillColor: 'blue',
-	color: 'black'
+	color: 'black',
+	fillOpacity: 0.5
 	}
 	
 ); //end setStyle()

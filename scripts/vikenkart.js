@@ -1,4 +1,7 @@
-// define the map and set its location via ([latitude, longitude], map zoom) 
+///////////////////////////////////////////////////////////////////////////////////////////////
+//define the map (base layer) and set its location via ([latitude, longitude], map zoom)
+//smaller map zoom = zoomed out farther, bigger map zoom = zoomed in more
+///////////////////////////////////////////////////////////////////////////////////////////////
 var mymap = L.map('mapid').setView([60.104657, 10.260997], 8);    
 
 //access the MapBox maps API, with generated API key/access token from Erin's MapBox account
@@ -9,7 +12,9 @@ var mymap = L.map('mapid').setView([60.104657, 10.260997], 8);
     accessToken: 'pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww'
 }).addTo(mymap);
 
-//make the Viken polygon outline	
+///////////////////////////////////////////////////////////////////////////////////////////////
+//make the Viken polygon outline
+///////////////////////////////////////////////////////////////////////////////////////////////
 var polygonViken = L.polygon(
 [ //begin creating Viken polygon
 	[ //define outer polygon
@@ -172,7 +177,7 @@ var polygonViken = L.polygon(
 		[59.827126, 10.909058],
 		[59.828535, 10.927424],
 		[59.832435, 10.935204]
-	] //close inner polygon
+	] //close inner Oslo area polygon
 ] //end creating Viken polygon
 ).addTo(mymap);
 
@@ -180,94 +185,60 @@ var polygonViken = L.polygon(
 polygonViken.setStyle(
 	{
 	fillColor: "#7D7D88",
-	color: "black",
+	color: "black", //border
 	fillOpacity: 0.5
 	}
 	
-); //end setStyle()
+); //end setStyle() for Viken polygon
 
-//define each school as a Circle with ([latitude, longitude], {color: for border and fill, radius}
+///////////////////////////////////////////////////////////////////////////////////////////////
+//define each school as a Circle overlay https://www.wrld3d.com/wrld.js/latest/docs/leaflet/L.Circle/
+//color-border color, fillColor-inside of circle (color HEX value), weight-thickness of border line
+//fillOpacity-saturation of fillColor, radius-in meters
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 //big schools
 var bigSchool = L.circle([59.780680, 9.938158], {color: "black", fillColor: "#DF9223", weight: 1, fillOpacity: 0.7, radius: 3500});
-bigSchool.bindPopup("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
+bigSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
 
 var schoolOne = L.circle([60.170592, 10.180414], {color: "black", fillColor: "#DF9223", weight: 1, fillOpacity: 0.7, radius: 3500});
-schoolOne.bindPopup("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
+schoolOne.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
 
 //medium schools
 var mediumSchool = L.circle([59.7441, 10.2045], {color: "black", fillColor: "#25AF53", weight: 1, fillOpacity: 0.7, radius: 2500});
-mediumSchool.bindPopup("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'> Click here to visit the library site</a>");
+mediumSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'> Click here to visit the library site</a>");
 
 var schoolTwo = L.circle([59.277854, 11.055712], {color: "black", fillColor: "#25AF53", weight: 1, fillOpacity: 0.7, radius: 2500});
-schoolTwo.bindPopup("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
+schoolTwo.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
 
 //small schools
 var smallSchool = L.circle([59.9560, 11.0504], {color: "black", fillColor: "#C623DF", weight: 1, fillOpacity: 0.7, radius: 1500});
-smallSchool.bindPopup("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
+smallSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
 
 var schoolThree = L.circle([59.737392, 9.692940], {color: "black", fillColor: "#C623DF", weight: 1, fillOpacity: 0.7, radius: 1500});
-schoolThree.bindPopup("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
+schoolThree.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 //define the layer groups (overlays) for groups of schools based on size; add them to map right away
+//so that the selection box (legend) will be populated right away
 // see tutorial at https://leafletjs.com/examples/layers-control/
+///////////////////////////////////////////////////////////////////////////////////////////////
 var bigSchoolsGroup = L.layerGroup([bigSchool, schoolOne]).addTo(mymap);
 var mediumSchoolsGroup = L.layerGroup([mediumSchool, schoolTwo]).addTo(mymap);
 var smallSchoolsGroup = L.layerGroup([smallSchool, schoolThree]).addTo(mymap);
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////
 //create the legend of each group of schools as overlay list with checkboxes
+///////////////////////////////////////////////////////////////////////////////////////////////
 var overlayMaps = {
 "<span style='color:#DF9223; font-size:15px; font-weight:bold;'> Big Schools </span>": bigSchoolsGroup,
 "<span style='color:#25AF53; font-size:15px; font-weight:bold;'> Medium Schools </span>": mediumSchoolsGroup,
 "<span style='color:#C623DF; font-size:15px; font-weight:bold;'> Small Schools </span>": smallSchoolsGroup
 }
 
-
-//add the groups to the map
+///////////////////////////////////////////////////////////////////////////////////////////////
+//add the overlayMaps legend to the map, not collapsed
+///////////////////////////////////////////////////////////////////////////////////////////////
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
 
-
- /*example of customizing the pop up text with links and other HTML tags /  
-      var schoolOne = L.marker([59.9134, 10.8418], {icon: BigIcon});
-      schoolOne.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
-*/	  
-
-
-/* old code using the Icons as the marker for the schools
-// if you want to use this, place it before the implementation of the map at the top of the javascript file
-//define the icons we will use to place on the map to indicate locations
-      var bigIcon = L.icon ({
-       iconUrl: './images/skole-ikon.png',                
-       iconSize: [45,45],
-       iconAnchor: [30.072222, 31.275556],
-       popupAnchor: [-3, -76]
-    });
-      
-      var mediumIcon = L.icon ({
-       iconUrl: './images/skole-ikon.png',                
-       iconSize: [25,25],
-       iconAnchor: [30.072222, 31.275556],
-       popupAnchor: [-3, -76]
-    });
-
-      var smallIcon = L.icon ({
-       iconUrl: './images/skole-ikon.png',                
-       iconSize: [18,18],
-       iconAnchor: [30.072222, 31.275556],
-       popupAnchor: [-3, -76]
-    });
-
-//define each school with its location, information text, and add to layer group /
-var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
-schoolOne.bindPopup("Hello this is a school.");
-schoolOne.addTo(bigSchoolsGroup);
-
-var schoolTwo = L.marker([59.7441, 10.2045], {icon: mediumIcon});
-schoolTwo.bindPopup("Hello this is a school as well but it is a little smaller.");
-schoolTwo.addTo(mediumSchoolsGroup); 
-	    
-var schoolThree = L.marker([59.9560, 11.0504], {icon: smallIcon});
-schoolThree.bindPopup("Hello this is a school but it is the smallest of the schools. <br /><br /> <a href='http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza' target='_newtab'> Wikipedia </a>");
-schoolThree.addTo(smallSchoolsGroup); 
-*/
+//end vikenkart.js

@@ -218,9 +218,9 @@ var smallSchoolsGroup = L.layerGroup([smallSchool, schoolThree]).addTo(mymap);
 
 //create the legend of each group of schools as overlay list with checkboxes
 var overlayMaps = {
-"<span style='color:#DF9223; font-size:46px; font-weight:bold;'> Big Schools </span>": bigSchoolsGroup,
-"<span style='color:#25AF53; font-size:46px; font-weight:bold;'> Medium Schools </span>": mediumSchoolsGroup,
-"<span style='color:#C623DF; font-size:46px; font-weight:bold;'> Small Schools </span>": smallSchoolsGroup
+"<span style='color:#DF9223; font-size:15px; font-weight:bold;'> Big Schools </span>": bigSchoolsGroup,
+"<span style='color:#25AF53; font-size:15px; font-weight:bold;'> Medium Schools </span>": mediumSchoolsGroup,
+"<span style='color:#C623DF; font-size:15px; font-weight:bold;'> Small Schools </span>": smallSchoolsGroup
 }
 
 

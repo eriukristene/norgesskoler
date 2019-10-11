@@ -181,7 +181,7 @@ polygonViken.setStyle(
 	{
 	fillColor: 'blue',
 	color: 'black',
-	fillOpacity: 0.5
+	fillOpacity: 0.2
 	}
 	
 ); //end setStyle()

@@ -203,7 +203,7 @@ var schoolTwo = L.circle([59.277854, 11.055712], {color: "black", fillColor: "#2
 schoolTwo.bindPopup("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
 
 //small schools
-var smallSchool = L.circle([59.9560, 11.0504], {color: "black", fillColor: "C623DF", weight: 1, fillOpacity: 0.5, radius: 1500});
+var smallSchool = L.circle([59.9560, 11.0504], {color: "black", fillColor: "#C623DF", weight: 1, fillOpacity: 0.5, radius: 1500});
 smallSchool.bindPopup("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
 
 var schoolThree = L.circle([59.737392, 9.692940], {color: "black", fillColor: "#C623DF", weight: 1, fillOpacity: 0.5, radius: 1500});

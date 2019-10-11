@@ -181,7 +181,7 @@ polygonViken.setStyle(
 	{
 	fillColor: "#7D7D88",
 	color: "black",
-	fillOpacity: 0.2
+	fillOpacity: 0.5
 	}
 	
 ); //end setStyle()
@@ -215,20 +215,12 @@ var bigSchoolsGroup = L.layerGroup([bigSchool, schoolOne]).addTo(mymap);
 var mediumSchoolsGroup = L.layerGroup([mediumSchool, schoolTwo]).addTo(mymap);
 var smallSchoolsGroup = L.layerGroup([smallSchool, schoolThree]).addTo(mymap);
 
-/*
+
 //create the legend of each group of schools as overlay list with checkboxes
 var overlayMaps = {
-"<style='color:#DF9223; font-size:46px; font-weight:bold;'> Big Schools </style>": bigSchoolsGroup,
-"<style='color:#25AF53; font-size:46px; font-weight:bold;'> Medium Schools </style>": mediumSchoolsGroup,
-"<style='color:#C623DF; font-size:46px; font-weight:bold;'> Small Schools </style>": smallSchoolsGroup
-}
-*/
-
-
-var overlayMaps = {
-"<b> Big Schools </b>": bigSchoolsGroup,
-"<b> Medium Schools </b>": mediumSchoolsGroup,
-"<b> Small Schools </b>": smallSchoolsGroup
+"<span style='color:#DF9223; font-size:46px; font-weight:bold;'> Big Schools </span>": bigSchoolsGroup,
+"<span style='color:#25AF53; font-size:46px; font-weight:bold;'> Medium Schools </span>": mediumSchoolsGroup,
+"<span style='color:#C623DF; font-size:46px; font-weight:bold;'> Small Schools </span>": smallSchoolsGroup
 }
 
 

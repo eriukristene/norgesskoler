@@ -256,7 +256,7 @@ L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
        popupAnchor: [-3, -76]
     });
 
-//define each school with its location, information text, and add to layer group
+//define each school with its location, information text, and add to layer group /
 var schoolOne = L.marker([59.9134, 10.8418], {icon: bigIcon});
 schoolOne.bindPopup("Hello this is a school.");
 schoolOne.addTo(bigSchoolsGroup);

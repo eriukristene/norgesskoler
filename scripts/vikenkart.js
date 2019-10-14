@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //define the map (base layer) and set its location via ([latitude, longitude], map zoom)
-//smaller map zoom = zoomed out farther, bigger map zoom = zoomed in more
+//smaller number map zoom = zoomed out farther, bigger number map zoom = zoomed in more
 ///////////////////////////////////////////////////////////////////////////////////////////////
 var mymap = L.map('mapid').setView([60.104657, 10.260997], 8);    
 

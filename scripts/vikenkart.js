@@ -497,8 +497,7 @@ var polygonViken = L.polygon(
 // set the color for the Viken polygon
 polygonViken.setStyle(
 	{
-	//fillColor: "#7D7D88",
-	fillColor: "purple",
+	fillColor: "#7D7D88",
 	color: "black", //border
 	fillOpacity: 0.5
 	}

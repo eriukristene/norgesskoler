@@ -585,9 +585,9 @@ smallSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consect
 //so that the selection box (legend) will be populated right away
 // see tutorial at https://leafletjs.com/examples/layers-control/
 ///////////////////////////////////////////////////////////////////////////////////////////////
-var bigSchoolsGroup = L.layerGroup([vgsBuskerud, vgsDrammen]).addTo(mymap);
-var mediumSchoolsGroup = L.layerGroup([mediumSchool, schoolTwo]).addTo(mymap);
-var smallSchoolsGroup = L.layerGroup([smallSchool, schoolThree]).addTo(mymap);
+var bigSchoolsGroup = L.layerGroup([vgsBuskerud, vgsDrammen, vgsHønefoss, vgsKongsberg, vgsLier, vgsRingerike, vgsRøyken, vgsStHallvard, vgsÅssiden]).addTo(mymap);
+var mediumSchoolsGroup = L.layerGroup([vgsEiker, vgsGol, vgsÅl]).addTo(mymap);
+var smallSchoolsGroup = L.layerGroup([vgsNumedal]).addTo(mymap);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //create the legend of each group of schools as overlay list with checkboxes

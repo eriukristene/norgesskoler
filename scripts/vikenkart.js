@@ -524,15 +524,27 @@ bigSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectet
 
 */
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 //Buskerud fylkeskommune
-var bigSchool = L.circle([59.780680, 9.938158], {color: "black", fillColor: "#DF9223", weight: 1, fillOpacity: 0.7, radius: 3500});
-bigSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
+///////////////////////////////////////////////////////////////////////////////////////////////
+var vgsBuskerud = L.circle([59.894920, 9.931280], {color: "black", fillColor: "#DF9223", weight: 1, fillOpacity: 0.7, radius: 3500});
+vgsBuskerud.bindPopup("<b> Buskerud videregående skole </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /> <a href='http://www.buskerud.vgs.no/' target='_newtab'>Klikk her for å besøke nettstedet</a>");
 
+var vgsDrammen = L.circle([59.737280, 10.198230], {color: "black", fillColor: "#DF9223", weight: 1, fillOpacity: 0.7, radius: 3500});
+vgsDrammen.bindPopup("<b> Drammen videregående skole </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /> <a href='http://www.drammen.vgs.no/' target='_newtab'>Klikk her for å besøke nettstedet</a>");
+
+var vgsEiker = L.circle([59.773180, 9.903880], {color: "black", fillColor: "#DF9223", weight: 1, fillOpacity: 0.7, radius: 3500});
+vgsEiker.bindPopup("<b> Eiker videregående skole </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /> <a href='hhttp://www.eiker.vgs.no/' target='_newtab'>Klikk her for å besøke nettstedet</a>");
+
+///////////////////////////////////////////////////////////////////////////////////////////////
 //Akershus fylkeskommune
+///////////////////////////////////////////////////////////////////////////////////////////////
 var mediumSchool = L.circle([59.7441, 10.2045], {color: "black", fillColor: "#25AF53", weight: 1, fillOpacity: 0.7, radius: 2500});
 mediumSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'> Click here to visit the library site</a>");
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 //Østfold fylkeskommune
+///////////////////////////////////////////////////////////////////////////////////////////////
 var smallSchool = L.circle([59.9560, 11.0504], {color: "black", fillColor: "#C623DF", weight: 1, fillOpacity: 0.7, radius: 1500});
 smallSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
 
@@ -543,7 +555,7 @@ smallSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consect
 //so that the selection box (legend) will be populated right away
 // see tutorial at https://leafletjs.com/examples/layers-control/
 ///////////////////////////////////////////////////////////////////////////////////////////////
-var bigSchoolsGroup = L.layerGroup([bigSchool, schoolOne]).addTo(mymap);
+var bigSchoolsGroup = L.layerGroup([vgsBuskerud]).addTo(mymap);
 var mediumSchoolsGroup = L.layerGroup([mediumSchool, schoolTwo]).addTo(mymap);
 var smallSchoolsGroup = L.layerGroup([smallSchool, schoolThree]).addTo(mymap);
 

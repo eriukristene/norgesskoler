@@ -511,20 +511,6 @@ polygonViken.setStyle(
 //fillOpacity-saturation of fillColor, radius-in meters
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-/*
-big schools
-var bigSchool = L.circle([59.780680, 9.938158], {color: "black", fillColor: "#DF9223", weight: 1, fillOpacity: 0.7, radius: 3500});
-
-medium schools 
-var mediumSchool = L.circle([59.7441, 10.2045], {color: "black", fillColor: "#25AF53", weight: 1, fillOpacity: 0.7, radius: 2500});
-
-small schools
-var smallSchool = L.circle([59.9560, 11.0504], {color: "black", fillColor: "#C623DF", weight: 1, fillOpacity: 0.7, radius: 1500});
-
-bigSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /> <a href='https://buskerud.fylkesbibl.no/' target='_newtab'>Click here to visit the library site</a>");
-
-*/
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //Buskerud fylkeskommune
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -655,9 +641,11 @@ smallSchool.bindPopup("<b> School 1 </b><br> Lorem ipsum dolor sit amet, consect
 //so that the selection box (legend) will be populated right away
 // see tutorial at https://leafletjs.com/examples/layers-control/
 ///////////////////////////////////////////////////////////////////////////////////////////////
-var bigSchoolsGroup = L.layerGroup([vgsBuskerud, vgsDrammen, vgsHonefoss, vgsKongsberg, vgsLier, vgsRingerike, vgsRoyken, vgsStHallvard, vgsAassiden]).addTo(mymap);
-var mediumSchoolsGroup = L.layerGroup([vgsEiker, vgsGol, vgsAal]).addTo(mymap);
-var smallSchoolsGroup = L.layerGroup([vgsNumedal]).addTo(mymap);
+var bigSchoolsGroup = L.layerGroup([vgsBuskerud, vgsDrammen, vgsHonefoss, vgsKongsberg, vgsLier, vgsRingerike, vgsRoyken, vgsStHallvard, vgsAassiden, vgsAsker, vgsBjertnes, vgsBjorkelangen, vgsDromtorp, vgsEidsvoll, vgsFrogn, vgsJessheim, vgsLillestrom, vgsLorenskog, vgsMailand, vgsNadderud, vgsNannestad, vgsNesbru, vgsNesodden, vgsRosenvilde, vgsRud]).addTo(mymap);
+
+var mediumSchoolsGroup = L.layerGroup([vgsEiker, vgsGol, vgsAal, vgsBleiker, vgsDonski, vgsEikeli, vgsHvam, vgsNes, vgsRoald]).addTo(mymap);
+
+var smallSchoolsGroup = L.layerGroup([vgsNumedal, vgsHolmen, vgsKjelle]).addTo(mymap);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //create the legend of each group of schools as overlay list with checkboxes

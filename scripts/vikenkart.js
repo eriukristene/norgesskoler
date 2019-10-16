@@ -694,7 +694,7 @@ vgsMysen.bindPopup("<b> Mysen videregående skole </b><br> Lorem ipsum dolor sit
 var vgsStOlav = L.circle([59.280776, 11.104585], {color: "black", fillColor: "red", weight: 1, fillOpacity: 0.7, radius: 2500});
 vgsStOlav.bindPopup("<b> St. Olav videregående skole </b><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /> <a href='https://stolav.vgs.no/' target='_newtab'>Klikk her for å besøke nettstedet</a>");
 
-var circle = L.circleMarker([59.280776, 11.104585], { color: 'purple', fillColor: "purple", fillOpacity: 0.7, radius: 20});
+var circle = L.circleMarker([59.280776, 11.104585], { color: "purple", fillColor: "purple", fillOpacity: 0.7, radius: 20});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //define the layer groups (overlays) for groups of schools based on size; add them to map right away

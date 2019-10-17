@@ -7,7 +7,7 @@ var mymap = L.map('mapid').setView([60.104657, 10.260997], 8);
 //access the MapBox maps API, with generated API key/access token from Erin's MapBox account
     L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    minZoom: 2,
+    //minZoom: 2,
     maxZoom: 8,
     id: 'your.mapbox.project.id',
     accessToken: 'pk.eyJ1IjoiZXJpdWtyaXN0ZW5lIiwiYSI6ImNrMWFlZDAzMDBjODQzZHBhd2kxaGJndGoifQ.qtMgz7G3f0Ptwawi3Ws_Ww'

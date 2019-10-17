@@ -3,7 +3,7 @@
 //smaller number map zoom = zoomed out farther, bigger number map zoom = zoomed in more
 ///////////////////////////////////////////////////////////////////////////////////////////////
 var mymap = L.map('mapid', {
-	minZoom: 0,
+	//minZoom: 0,
 	maxZoom: 8
 });
 mymap.setView([60.104657, 10.260997]);    

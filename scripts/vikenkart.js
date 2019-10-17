@@ -703,7 +703,7 @@ var bigSchoolsGroup = L.layerGroup([vgsBuskerud, vgsDrammen, vgsHonefoss, vgsKon
 
 var mediumSchoolsGroup = L.layerGroup([vgsEiker, vgsGol, vgsAal, vgsBleiker, vgsDonski, vgsEikeli, vgsHvam, vgsNes, vgsRoald, vgsStabekk, vgsKalnes]).addTo(mymap);
 
-var smallSchoolsGroup = L.layerGroup([vgsNumedal, vgsHolmen, vgsKjelle, circle1, circle2, circle3]).addTo(mymap);
+var smallSchoolsGroup = L.layerGroup([vgsNumedal, vgsHolmen, vgsKjelle]).addTo(mymap);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //create the legend of each group of schools as overlay list with checkboxes

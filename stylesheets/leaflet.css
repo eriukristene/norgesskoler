@@ -327,7 +327,7 @@
 
 .leaflet-control-layers {
 	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-	background: #cccccc;
+	background: #FFFFFF;
 	border-radius: 5px;
 	}
 .leaflet-control-layers-toggle {
@@ -354,7 +354,7 @@
 .leaflet-control-layers-expanded {
 	padding: 6px 10px 6px 6px;
 	color: #333;
-	background: #cccccc;
+	background: #FFFFFF;
 	}
 .leaflet-control-layers-scrollbar {
 	overflow-y: scroll;
@@ -486,7 +486,7 @@
 	}
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-	background: #cccccc;
+	background: #FFFFFF;
 	color: #333;
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
 	}

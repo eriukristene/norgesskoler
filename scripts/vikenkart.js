@@ -710,7 +710,7 @@ var smallSchoolsGroup = L.layerGroup([vgsNumedal, vgsHolmen, vgsKjelle]).addTo(m
 ///////////////////////////////////////////////////////////////////////////////////////////////
 var overlayMaps = {
 "<span style='color:red; font-size:15px; font-weight:bold;'> Store skoler </span>": bigSchoolsGroup,
-"<span style='color:blue; font-size:15px; font-weight:bold;'> Mellomstore skoler </span>": mediumSchoolsGroup,
+"<span style='color:blue; font-size:15px; font-weight:bold;'> Medium skoler </span>": mediumSchoolsGroup,
 "<span style='color:green; font-size:15px; font-weight:bold;'> Små skoler </span>": smallSchoolsGroup
 }
 
